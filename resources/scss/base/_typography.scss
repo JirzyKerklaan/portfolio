@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Khula:wght@300;400;600;700;800&display=swap');
+
+* {
+    font-family: 'Inter', sans-serif;
+}
+h1 {
+    font-size: calc(84rem / 16);
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1;
+}
+
+p {
+    font-size: calc(22rem / 16);
+    font-weight: 600;
+    color: #0d0d0d;
+    opacity: 50%;
+    line-height: 1.25;
+    letter-spacing: -.25px;
+}
+
+p + p {
+    margin-top: calc(27.5rem / 16);
+}

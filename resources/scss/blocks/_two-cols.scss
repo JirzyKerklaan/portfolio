@@ -1,0 +1,47 @@
+.two-cols {
+    padding-top: calc(100rem / 16);
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: calc(75rem / 16);
+    }
+
+    &__subtitle {
+            font-size: 1rem;
+            font-weight: 600;
+            font-style: italic;
+            line-height: 1;
+            letter-spacing: -2.5%;
+            color: #0d0d0d;
+            opacity: 35%;
+            display: block;
+            width: 100%;
+            border-bottom: 1px solid #0d0d0d;
+            padding-bottom: 10px;
+    }
+
+    &__columns {
+        display: grid;
+        grid-template-columns: 300px 470px;
+        row-gap: calc(27.5rem / 16);
+        justify-content: space-between;
+    }
+
+    &__title {
+        h2 {
+            font-weight: 300;
+            font-size: calc(46rem / 16);
+            line-height: 1;
+            letter-spacing: -.5px;
+        }
+    }
+
+    &__text {
+        font-weight: medium;
+        p {
+            color: #0d0d0d;
+            opacity: 50%;
+        }
+    }
+}

@@ -1,0 +1,13 @@
+.quote {
+    padding-top: calc(100rem/16);
+    &__inner {
+        q {
+            font-size: 3rem;
+            font-weight: 600;
+            color: #0d0d0d;
+            letter-spacing: 2.5;
+            line-height: 1;
+            text-align: left;
+        }
+    }
+}
