@@ -1,21 +1,22 @@
 .btn {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+    border-radius: 100rem;
+    width: fit-content;
+    text-decoration: none;
+    transition: all ease-in-out .15s;
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: -.5px;
+    padding: 10px 35px;
+
     &--primary {
         background-color: #0D0D0D;
         color: #FAFAFA;
         fill: #FAFAFA;
-        padding: 10px 35px;
-        display: flex;
-        flex-direction: row;
-        gap: 15px;
-        align-items: center;
-        border-radius: 100rem;
-        width: fit-content;
-        text-decoration: none;
         border: 2px solid #0D0D0D;
-        transition: all ease-in-out .15s;
-        font-weight: 500;
-        font-size: 18px;
-        letter-spacing: -.5px;
 
         .icon {
             height: 21px;
@@ -34,6 +35,20 @@
                     stroke: #0D0D0D !important
                 }
             }
+        }
+    }
+
+    &--secondary {
+        background-color: #FAFAFA;
+        color: #0D0D0D;
+        border: 2px solid #0D0D0D;
+        line-height: 1;
+        height: fit-content;
+        
+        &:hover {
+            background-color: #0D0D0D;
+            color: #FAFAFA;
+            transition: all ease-in-out .15s;
         }
     }
 }

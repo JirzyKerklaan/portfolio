@@ -16,5 +16,5 @@ import Projects from '@/Components/Blocks/Projects/Projects.vue';
     
     <Skills/>
     <Projects />
-    <!-- <Footer /> -->
+    <Footer />
 </template>

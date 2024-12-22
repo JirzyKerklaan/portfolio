@@ -1,5 +1,5 @@
 <script setup>
-import PrimaryButton from '@/Components/base/PrimaryButton.vue';
+import Button from '@/Components/base/PrimaryButton.vue';
 
 </script>
 
@@ -26,7 +26,7 @@ import PrimaryButton from '@/Components/base/PrimaryButton.vue';
                     </div>
                     <div class="two-cols__column">
                         <div class="two-cols__button">
-                            <PrimaryButton text="Contact opnemen" url="mailto:jirzykerklaan@gmail.com" />
+                            <Button text="Contact opnemen" url="mailto:jirzykerklaan@gmail.com" />
                         </div>
                     </div>
                     <div class="two-cols__column">

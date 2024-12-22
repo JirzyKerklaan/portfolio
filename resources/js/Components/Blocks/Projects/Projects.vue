@@ -1,4 +1,6 @@
 <script setup>
+import ProjectsListItem from './ProjectsListItem.vue';
+
 let projects = [
     {
         'name': 'Sportverkiezingen 2024',
@@ -32,14 +34,7 @@ let projects = [
             </div>
             <ul class="projects__list">
                 <li class="projects__list--item" v-for="project, i in projects">
-                    <div class="projects--project__inner">
-                        <div class="projects--project__name">
-                            <h3><span>0{{ i + 1 }}</span>{{ project.name }}</h3>
-                        </div>
-                        <div class="projects--project__task">
-                            <span>{{project.task}}</span>
-                        </div>
-                    </div>
+                    <ProjectsListItem :name="project.name" :task="project.task" :i="i" />
                 </li>
             </ul>
         </div>
