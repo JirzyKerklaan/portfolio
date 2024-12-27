@@ -1,5 +1,11 @@
 .quote {
     padding-top: calc(100rem/16);
+
+    
+    @media screen and (max-width: 512px) {
+        padding-top: calc(50rem / 16);
+    }
+
     &__inner {
         q {
             font-size: 3rem;
@@ -8,6 +14,10 @@
             letter-spacing: 2.5;
             line-height: 1;
             text-align: left;
+            
+            @media screen and (max-width: 512px) {
+                font-size: 1.75rem;
+            }
         }
     }
 }

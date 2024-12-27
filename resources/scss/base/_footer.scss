@@ -1,6 +1,16 @@
 .footer {
     padding-top: calc(250rem / 16);
     position: relative;
+
+    @media screen and (max-width: 512px) {
+        padding-top: calc(125rem / 16);
+
+        .container {
+            margin-left: 0;
+            margin-right: 0;
+            padding-top: 4rem;
+        }
+    }
     
     .container {
         background-color: #FAFAFA75;
@@ -20,6 +30,11 @@
             font-weight: 600;
             line-height: 1.08;
 
+            
+            @media screen and (max-width: 512px) {
+                font-size: calc(36rem / 16);
+            }
+
             span {
                 font-weight: 600;
                 font-size: calc(22rem / 16);
@@ -27,6 +42,11 @@
                 display: block;
                 color: #0d0d0d75;
                 margin-bottom: 5px;
+
+                
+                @media screen and (max-width: 512px) {
+                    font-size: 1.125rem;
+                }
             }
         }
     }
@@ -38,6 +58,11 @@
         gap: calc(25rem / 16);
         align-items: center;
         justify-content: center;
+
+        
+        @media screen and (max-width: 512px) {
+            margin-top: calc(35rem / 16);
+        }
     }
 
     &__fineprint {
@@ -54,11 +79,22 @@
         margin-top: calc(175rem / 16);
         padding-bottom: calc(50rem / 16);
 
+        
+        @media screen and (max-width: 512px) {
+            margin-top: calc(100rem / 16);
+        }
+
         p {
             font-weight: 400;
             opacity: 50%;
             font-size: 1rem;
             line-height: 1.25;
+
+            
+            @media screen and (max-width: 512px) {
+                font-size: .75rem;
+                opacity: 75%;
+            }
         }
     }
 
@@ -71,22 +107,38 @@
             width: 1170px;
             height: 1170px;
             border-radius: 100%;
-            background-color: red;
             position: absolute;
             bottom: -65%;
             z-index: -1;
+
+            @media screen and (max-width: 512px ) {
+                width: 550px;
+                height: 550px;
+                bottom: -40%;
+            }
         }
 
         &::before {
             left: -40%;
             opacity: 75%;
             background: radial-gradient(circle, #A42ED2 0%, transparent 70%);
+            
+            @media screen and (max-width: 512px ) {
+                left: -70%;
+                opacity: 50%;
+            }
         }
 
         &::after {
             right: -40%;
             opacity: 75%;
             background: radial-gradient(circle, #1BDDB1 0%, transparent 70%);
+
+            
+            @media screen and (max-width: 512px ) {
+                right: -70%;
+                opacity: 50%;
+            }
         }
     }
 }

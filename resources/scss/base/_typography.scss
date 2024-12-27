@@ -21,6 +21,11 @@ p {
     opacity: 50%;
     line-height: 1.25;
     letter-spacing: -.25px;
+    
+    @media screen and (max-width: 512px) {
+        font-size: 1rem;
+        opacity: 95%;
+    }
 }
 
 p + p {

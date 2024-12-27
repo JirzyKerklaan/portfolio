@@ -2,8 +2,8 @@
     padding-top: calc(175rem / 16);
     position: relative;
 
-    &__inner {
-
+    @media screen and (max-width: 512px) {
+        padding-top: calc(75rem / 16);
     }
 
     &__title {
@@ -13,6 +13,10 @@
     &__list {
         margin-top: calc(50rem / 16);
         
+        @media screen and (max-width: 512px) {
+            margin-top: calc(25rem / 16);
+        }
+
         &--item {
             display: block;
             &::marker {
@@ -33,6 +37,15 @@
             align-items: center;
             justify-content: space-between;
             transition: ease-in-out .15s all;
+
+            
+            @media screen and (max-width: 512px) {
+                padding: calc(28rem / 16);
+                flex-direction: column;
+                justify-content: flex-start;
+                gap: .5rem;
+                align-items: flex-start;
+            }
         }
 
         &__name {
@@ -48,11 +61,21 @@
                 justify-content: flex-start;
                 transition: ease-in-out .15s all;
 
+                
+                @media screen and (max-width: 512px) {
+                    font-size: calc(20rem / 16);
+                }
+
                 span {
                     font-weight: 300;
                     font-size: calc(22rem / 16);
                     line-height: 1.25;
                     color: #0D0D0D75;
+
+                    
+                    @media screen and (max-width: 512px) {
+                        font-size: 1rem;
+                    }
                 }
             }
         }
@@ -66,6 +89,10 @@
                 font-weight: 300;
                 font-size: 1rem;
                 line-height: 1.25;
+                
+                @media screen and (max-width: 512px) {
+                    font-size: .8rem;
+                }
             }
         }
 

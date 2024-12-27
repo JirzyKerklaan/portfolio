@@ -28,6 +28,10 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        
+        @media screen and (max-width: 512px) {
+            font-size: 2rem;
+        }
     }
 
     &__subtext {

@@ -1,5 +1,4 @@
 <script setup>
-import { defineProps } from 'vue';
 import Arrow from '@/Components/svg/Arrow.vue';
 import Close from '@/Components/svg/Close.vue';
 

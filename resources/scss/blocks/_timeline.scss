@@ -17,6 +17,10 @@
             .timeline__line {
                 display: none;
             }
+
+            .timeline__function {
+                padding-bottom: 0;
+            }
         }
     }
 
@@ -69,7 +73,7 @@
     }
 
     &__function {
-        padding-bottom: 60px;
+        padding-bottom: 4rem;
         h4 {
             font-size: 1.25rem;
             line-height: 1.08;
