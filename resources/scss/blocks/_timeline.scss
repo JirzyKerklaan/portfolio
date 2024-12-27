@@ -1,0 +1,91 @@
+.timeline {
+    padding-top: calc(150rem / 16);
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }   
+
+    &__item {
+        display: grid;
+        grid-template-columns: 300px 40px 500px;
+        justify-content: space-between;
+        
+        
+        &:last-child {
+            .timeline__line {
+                display: none;
+            }
+        }
+    }
+
+    &__company {
+        h3 {
+            font-weight: 600;
+            color: #0d0d0d;
+            font-size: 1.5rem;
+            line-height: 1.08;
+        }
+
+        span {
+            font-weight: 1rem;
+            color: #868686;
+            line-height: 1.25;
+            margin-top: 10px;
+        }
+    }
+    
+    &__dot {
+        padding: 7.5px;
+        border: 2px dashed #868686;
+        background-color: #FAFAFA;
+        aspect-ratio: 1/1;
+        width: 100%;
+        height: auto;
+        border-radius: 100%;
+        transform: rotate(-5.75deg);
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: calc(100% - 15px);
+            height: calc(100% - 15px);
+            left: 7.5px;
+            right: 7.5px;
+            top: 7.5px;
+            bottom: 7.5px;
+            background-color: #1BDDB1;
+            border-radius: 100%;
+        }
+    }
+
+    &__line {
+        width: 0px;
+        height: 100%;
+        border-right: 2px dashed #868686;
+        margin: 0 auto;
+    }
+
+    &__function {
+        padding-bottom: 60px;
+        h4 {
+            font-size: 1.25rem;
+            line-height: 1.08;
+        }
+
+        p {
+            margin-top: 10px;
+            font-weight: 500;
+            color: #868686;
+            font-size: 1rem;
+            line-height: 1.25;
+            opacity: 1;
+        }
+
+        p + p {
+            margin-top: 5px;
+        }
+    }
+}

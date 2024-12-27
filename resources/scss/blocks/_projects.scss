@@ -200,7 +200,8 @@
                 text-decoration: underline;
 
                 &:hover {
-                    color: darken(#FAFAFA, 15%);
+                    // color: darken(#FAFAFA, 15%);
+                    color: scale(#FAFAFA, 15%);
                 }
             }
         }

@@ -1,12 +1,13 @@
 // Base files
-@import 'base/html';
-@import 'base/typography';
-@import 'base/buttons';
-@import 'base/footer';
+@forward 'base/html';
+@forward 'base/typography';
+@forward 'base/buttons';
+@forward 'base/footer';
 
 // Blocks files
-@import 'blocks/pageheader';
-@import 'blocks/quote';
-@import 'blocks/two-cols';
-@import 'blocks/skills';
-@import 'blocks/projects';
+@forward 'blocks/pageheader';
+@forward 'blocks/quote';
+@forward 'blocks/two-cols';
+@forward 'blocks/timeline';
+@forward 'blocks/skills';
+@forward 'blocks/projects';

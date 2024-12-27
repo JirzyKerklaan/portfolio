@@ -4,6 +4,7 @@ import Footer from '@/Components/base/Footer.vue';
 import Pagebuilder from '@/Components/Blocks/Pagebuilder/Pagebuilder.vue';
 import Quote from '@/Components/Blocks/Quote/Quote.vue';
 import TwoCols from '@/Components/Blocks/TwoCols/TwoCols.vue';
+import Timeline from '../Components/Blocks/Timeline/Timeline.vue';
 import Skills from '@/Components/Blocks/Skills/Skills.vue';
 import Projects from '@/Components/Blocks/Projects/Projects.vue';
 </script>
@@ -13,7 +14,7 @@ import Projects from '@/Components/Blocks/Projects/Projects.vue';
     <Pagebuilder />
     <Quote />
     <TwoCols />
-    
+    <Timeline />
     <Skills/>
     <Projects />
     <Footer />
