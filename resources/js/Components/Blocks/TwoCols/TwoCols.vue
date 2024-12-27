@@ -4,7 +4,7 @@ import Button from '@/Components/base/PrimaryButton.vue';
 </script>
 
 <template>
-    <div class="block__two-cols two-cols">
+    <div class="block__two-cols two-cols" id="about">
         <div class="container">
             <div class="two-cols__inner">
                 <span class="two-cols__subtitle">

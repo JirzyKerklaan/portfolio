@@ -10,7 +10,7 @@ import Projects from '@/Components/Blocks/Projects/Projects.vue';
 </script>
 
 <template>
-    <!-- <Header /> -->
+    <Header />
     <Pagebuilder />
     <Quote />
     <TwoCols />

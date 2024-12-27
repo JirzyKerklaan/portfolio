@@ -7,7 +7,7 @@ import Button from './SecondaryButton.vue';
 </script>
 
 <template>
-    <footer class="footer">
+    <footer class="footer" id="contact">
         <div class="footer__overlay"></div>
         <div class="container">
             <div class="footer__outer">

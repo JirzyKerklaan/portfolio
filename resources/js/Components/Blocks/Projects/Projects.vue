@@ -29,21 +29,10 @@ let projects = [
         'url': '/assets/projects/Kickstart.jpg',
     },
 ];
-let projectViewStatus = false;
-
-function toggleProjectView() {
-    console.log('called');
-    projectViewStatus = !projectViewStatus;
-    if (projectViewStatus == true) {
-        // document.body.style.overflow = 'hidden';
-    } else {
-        document.body.style.overflow = '';
-    }
-}
 </script>
 
 <template>
-    <div class="block__projects projects">
+    <div class="block__projects projects" id="projects">
         <div class="container">
             <div class="projects__inner">
                 <div class="projects__title">
@@ -51,7 +40,7 @@ function toggleProjectView() {
                 </div>
                 <ul class="projects__list">
                     <!-- Use @click instead of :onclick, and don't call the function immediately -->
-                    <li @click="toggleProjectView" 
+                    <li
                         class="projects__list--item" 
                         v-for="(project, i) in projects" 
                         :key="project.url" 
@@ -63,5 +52,5 @@ function toggleProjectView() {
         </div>
     </div>
 
-    <ProjectsView v-if="projectViewStatus" @toggleProjectView="toggleProjectView" />
+    <!-- <ProjectsView /> -->
 </template>

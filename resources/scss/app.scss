@@ -1,13 +1,2 @@
-// Base files
-@forward 'base/html';
-@forward 'base/typography';
-@forward 'base/buttons';
-@forward 'base/footer';
-
-// Blocks files
-@forward 'blocks/pageheader';
-@forward 'blocks/quote';
-@forward 'blocks/two-cols';
-@forward 'blocks/timeline';
-@forward 'blocks/skills';
-@forward 'blocks/projects';
+@forward 'base/base';
+@forward 'blocks/blocks';

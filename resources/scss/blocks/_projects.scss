@@ -116,17 +116,16 @@
     }
 
     &-view {
-        height: 100vh;  /* Take up the full height of the viewport */
-        overflow: auto;  /* Make the content inside scrollable */
-        
+        height: 100vh;
+        overflow: auto;
         background-color: #0D0D0D;
-        position: fixed; /* Keeps it fixed at the top of the viewport */
-        top: 0;  /* Always stays at the top of the screen */
-        left: 0;  /* Stays at the left edge of the screen */
-        width: 100%;  /* Full-width of the viewport */
-        z-index: 20;  /* Ensure it sits above other content */
-        padding-bottom: 50px;  /* Adds padding at the bottom */
-        box-sizing: border-box;  /* Ensures padding doesn't affect the layout */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 120;
+        padding-bottom: 50px;
+        box-sizing: border-box;
 
         &__close {
             width: 25px;
