@@ -12,15 +12,15 @@ const openMenu = () => {
   isMenuVisible.value = true;
   setTimeout(() => {
     isMenuOpen.value = true;
-  }, 10); // Small delay to trigger opacity transition
+  }, 10); // Small delay to trigger transition
 };
 
 // Close Menu
 const closeMenu = () => {
   isMenuOpen.value = false;
   setTimeout(() => {
-    isMenuVisible.value = false; // Set display: none after fade-out
-  }, 200); // Match this to the fade-out transition duration
+    isMenuVisible.value = false; // Set display: none after sliding out
+  }, 300); // Match this to the slide-out transition duration
 };
 </script>
 
@@ -51,9 +51,9 @@ const closeMenu = () => {
     class="menu__sidebar"
     v-if="isMenuVisible"
     :style="{
-      opacity: isMenuOpen ? '1' : '0',
+      transform: isMenuOpen ? 'translateX(0)' : 'translateX(100%)',
       display: isMenuVisible ? 'block' : 'none',
-      transition: 'opacity 0.2s ease'
+      transition: 'transform 0.3s ease'
     }"
   >
     <div class="menu__container">

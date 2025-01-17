@@ -1,21 +1,23 @@
 <script setup>
+import { onMounted } from 'vue';
+
 import Header from '@/Components/base/Header.vue';
 import Footer from '@/Components/base/Footer.vue';
-import Pagebuilder from '@/Components/Blocks/Pagebuilder/Pagebuilder.vue';
+import PageHeader from '@/Components/Blocks/PageHeader/PageHeader.vue';
 import Quote from '@/Components/Blocks/Quote/Quote.vue';
 import TwoCols from '@/Components/Blocks/TwoCols/TwoCols.vue';
-import Timeline from '../Components/Blocks/Timeline/Timeline.vue';
+import Timeline from '@/Components/Blocks/Timeline/Timeline.vue';
 import Skills from '@/Components/Blocks/Skills/Skills.vue';
 import Projects from '@/Components/Blocks/Projects/Projects.vue';
-</script>
 
+</script>
 <template>
-    <Header />
-    <Pagebuilder />
-    <Quote />
-    <TwoCols />
-    <Timeline />
-    <Skills/>
-    <Projects />
-    <Footer />
+  <Header />
+  <PageHeader />
+  <Quote />
+  <TwoCols />
+  <Timeline />
+  <Skills />
+  <Projects />
+  <Footer />
 </template>

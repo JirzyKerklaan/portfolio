@@ -1,5 +1,6 @@
 .menu {
-    width: 100%;
+    width: fit-content;
+    right: 0;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -9,9 +10,24 @@
     top: 0;
     z-index: 100;
     user-select: none;
+    
+    @media screen and (max-width: 760px) {
+        &::before {
+            pointer-events: all;
+            content: '';
+            position: absolute;
+            z-index: 0;
+            backdrop-filter: blur(1.5px);
+            width: 100px;
+            height: 100px;
+            right: 0;
+            top: -1.5625rem;
+            border-bottom-left-radius: 100%;
+        }        
+    }
 
-    @media screen and (max-width: 512px) {
-        margin-top: calc(20rem / 16);
+    @media screen and (max-width: 760px) {
+        margin-top: calc(25rem / 16);
         padding-right: calc(25rem / 16);
     }
 
@@ -19,17 +35,25 @@
         font-weight: 600;
         line-height: 1;
         font-size: calc(26rem / 16);
+        color: #0d0d0d;
+
+        @media screen and (max-width: 760px) {
+            display: none;
+        }
     }
 
     &__button {
         display: flex;
         flex-direction: row;
         gap: .25rem;
-        color: #0D0D0D;
-        mix-blend-mode: difference;
 
         &:hover {
             cursor: pointer;
+        }
+
+        
+        @media screen and (max-width: 760px) {
+            z-index: 1;
         }
     }
 

@@ -1,6 +1,5 @@
 <script setup>
 import JK from '../svg/JK.vue';
-import Image from './Image.vue';
 import Button from './SecondaryButton.vue';
 
 
@@ -20,7 +19,7 @@ import Button from './SecondaryButton.vue';
                     </div>
                     <div class="footer__buttons">
                         <Button url="mailto:jirzykerklaan@gmail.com" text="E-mail" />
-                        <Button url="#" text="LinkedIn" />
+                        <Button url="https://www.linkedin.com/in/jirzy-kerklaan" text="LinkedIn" />
                     </div>
                     <div class="footer__fineprint">
                         <JK />

@@ -23,11 +23,6 @@ let projects = [
         'task': 'Front-end Development',
         'url': '/assets/projects/Thrive.jpg',
     },
-    {
-        'name': 'E-mail campagnes',
-        'task': 'Development',
-        'url': '/assets/projects/Kickstart.jpg',
-    },
 ];
 </script>
 
