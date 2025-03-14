@@ -6,7 +6,7 @@
     <title>404 | Page not found</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body style="background-color: #0f0f0f; color: #fff; font-family: Inter, sans-serif; max-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden;">
+<body style="background-color: #0f0f0f; color: #FAFAFA; font-family: Inter, sans-serif; max-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden;">
     <div class="404" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh;">
         <h1 style="font-size: 4rem; margin-bottom: .5rem;"><span style="color: #1BDDB1;">4</span>0<span style="color: #1BDDB1;">4</span></h1>
         <p style="font-size: calc(22rem / 16);">Pagina niet gevonden</p>

@@ -72,9 +72,9 @@ const closeMenu = () => {
         </div>
         <div class="menu__links">
           <span>Menu</span>
-          <a href="#">Over mij</a>
-          <a href="#">Projecten</a>
-          <a href="#">Contact</a>
+          <a href="#about">Over mij</a>
+          <a href="#projects">Projecten</a>
+          <a href="#contact">Contact</a>
         </div>
       </div>
 

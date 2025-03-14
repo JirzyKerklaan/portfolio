@@ -1,6 +1,4 @@
 <script setup>
-import { onMounted } from 'vue';
-
 import Header from '@/Components/base/Header.vue';
 import Footer from '@/Components/base/Footer.vue';
 import PageHeader from '@/Components/Blocks/PageHeader/PageHeader.vue';
@@ -14,10 +12,10 @@ import Projects from '@/Components/Blocks/Projects/Projects.vue';
 <template>
   <Header />
   <PageHeader />
-  <Quote />
+  <Quote id="about" />
   <TwoCols />
   <Timeline />
   <Skills />
-  <Projects />
-  <Footer />
+  <Projects id="projects" />
+  <Footer id="contact"/>
 </template>
