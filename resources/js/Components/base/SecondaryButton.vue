@@ -7,6 +7,8 @@ defineProps({
 
 <template>
     <a :href="url" class="btn btn--secondary">
-        {{ text }}
+        <span>
+            {{ text }}
+        </span>
     </a>
 </template>

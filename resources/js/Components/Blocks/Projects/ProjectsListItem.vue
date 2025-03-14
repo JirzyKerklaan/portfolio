@@ -3,8 +3,10 @@ defineProps({
     name: String,
     task: String,
     i: Number,
-    url: String,
+    url: String
 });
+
+
 </script>
 
 <template>

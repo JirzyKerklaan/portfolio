@@ -11,6 +11,31 @@
     font-size: 18px;
     letter-spacing: -.5px;
     padding: 10px 35px;
+    position: relative;
+    overflow: hidden;
+    transition: all .75s cubic-bezier(.19,.24,.27,.98);
+
+    &::before {
+        content: '';
+        position: absolute;
+        height: 200%;
+        width: 200%;
+        right: -100%;
+        top: 110%;
+        transition: all .75s cubic-bezier(.19,.24,.27,.98);
+        border-radius: 100%;
+        border: 20px solid #1BDDB1;
+    }
+    
+    &:hover,&:focus {
+        transition: all .5s cubic-bezier(.19,.24,.27,.98);
+
+        &::before {
+            right: -100%;
+            top: -100%;
+            transition: all .75s cubic-bezier(.19,.24,.27,.98);
+        }
+    }
 
     &--primary {
         background-color: #0D0D0D;
@@ -18,23 +43,31 @@
         fill: #FAFAFA;
         border: 2px solid #0D0D0D;
 
-        .icon {
-            height: 21px;
+        &::before {
+            content: '';
+            background-color: #FAFAFA;
         }
 
-        &:hover {
-            background-color: #FAFAFA;
-            border: 2px solid #0D0D0D;
+        &:hover,&:focus {
             color: #0D0D0D;
-            transition: all ease-in-out .15s;
+            z-index: 1;
+
+            span {
+                z-index: 1;
+                color: #0D0D0D;
+            }
 
             .icon {
-                svg, path {
-                    transition: all ease-in-out .15s;
-                    fill: #0D0D0D !important;
-                    stroke: #0D0D0D !important
+                * {
+                    fill: #0D0D0D;
+                    stroke: #0D0D0D;
+                    z-index: 2;
                 }
             }
+        }
+
+        .icon {
+            height: 1.25rem;
         }
     }
 
@@ -44,11 +77,15 @@
         border: 2px solid #0D0D0D;
         line-height: 1;
         height: fit-content;
-        
-        &:hover {
-            background-color: #0D0D0D;
-            color: #FAFAFA;
-            transition: all ease-in-out .15s;
+
+        &::before {
+            content: '';
+            background-color: #0d0d0d;
+            z-index: -1;
+        }
+
+        &:hover,&:focus {
+            color: #fafafa;
         }
     }
 }

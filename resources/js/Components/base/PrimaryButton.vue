@@ -12,6 +12,8 @@ defineProps({
         <span class="icon">
             <Arrow />
         </span>
-        {{ text }}
+        <span>
+            {{ text }}
+        </span>
     </a>
 </template>

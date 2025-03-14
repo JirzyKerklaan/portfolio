@@ -19,6 +19,7 @@ import Button from './SecondaryButton.vue';
                     </div>
                     <div class="footer__buttons">
                         <Button url="mailto:jirzykerklaan@gmail.com" text="E-mail" />
+                        <Button url="https://github.com/JirzyKerklaan" text="Github" />
                         <Button url="https://www.linkedin.com/in/jirzy-kerklaan" text="LinkedIn" />
                     </div>
                     <div class="footer__fineprint">
@@ -26,7 +27,7 @@ import Button from './SecondaryButton.vue';
                         <p class="footer__fineprint__text">Jirzy Kerklaan</p>
                     </div>
                     <div class="footer__copyright">
-                        <p>&copy; Jirzy Kerklaan 2024. All rights reserved. Locatie: Nederland. <br>
+                        <p>&copy; Jirzy Kerklaan 2024. Alle rechten voorbehouden. Locatie: Nederland. <br>
                         Deze site toont mijn persoonlijke projecten en professionele werk. <br>
                         Inhoud mag niet zonder mijn toestemming worden gebruikt.</p>
                     </div>
