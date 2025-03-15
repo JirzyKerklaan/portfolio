@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Ontdek het creatieve werk van Jirzy Kerklaan, met een diverse selectie van designprojecten, kunst en innovatieve concepten. Laat je inspireren door de unieke benadering van elk project.">
 
         <title inertia>Portfolio | Jirzy Kerklaan</title>
 
