@@ -7,22 +7,54 @@ let projects = [
     {
         'name': 'Sportverkiezingen 2024',
         'task': 'Full-stack Development',
-        'url': '/assets/projects/thrivehealth.jpg',
+        'cover_url': '/assets/projects/sportverkiezingen.jpg',
+        'url': '/assets/projects/sportverkiezingen-overview.jpg',
+        'description': '<p>Lorem ipsum dolor sit amet.</p>',
+        'tech': [
+            { category: 'Frontend', technologies: ['Antlers', 'SCSS'] },
+            { category: 'Backend', technologies: ['Laravel', 'MySQL'] },
+            { category: 'CMS', technologies: ['Statamic'] }
+        ],
+        'external_url': 'https://github.com/JirzyKerklaan/Sportverkiezingen_2024'
     },
     {
         'name': 'Portfolio',
         'task': 'Full-stack Development / Design',
-        'url': '/assets/projects/Kickstart.jpg',
+        'cover_url': '/assets/projects/portfolio.jpg',
+        'url': '/assets/projects/portfolio-overview.jpg',
+        'description': '<p>Lorem ipsum dolor sit amet.</p>',
+        'tech': [
+            { category: 'Frontend', technologies: ['Antlers', 'SCSS'] },
+            { category: 'Backend', technologies: ['Laravel', 'MySQL'] },
+            { category: 'CMS', technologies: ['Statamic'] }
+        ],
+        'external_url': 'https://github.com/JirzyKerklaan/portfolio-v2'
     },
     {
         'name': 'Thrive Health',
         'task': 'Front-end Development',
-        'url': '/assets/projects/thrivehealth.jpg',
+        'cover_url': '/assets/projects/thrivehealth.jpg',
+        'url': '/assets/projects/thrivehealth-overview.jpg',
+        'description': '<p>Lorem ipsum dolor sit amet.</p>',
+        'tech': [
+            { category: 'Frontend', technologies: ['Antlers', 'SCSS'] },
+            { category: 'Backend', technologies: ['Laravel', 'MySQL'] },
+            { category: 'CMS', technologies: ['Statamic'] }
+        ],
+        'external_url': 'https://www.thrivehealth.nl/'
     },
     {
         'name': 'Hé - hospitality & events',
         'task': 'Front-end Development',
-        'url': '/assets/projects/Kickstart.jpg',
+        'cover_url': '/assets/projects/he.jpg',
+        'url': '/assets/projects/he-overview.jpg',
+        'description': '<p>Lorem ipsum dolor sit amet.</p>',
+        'tech': [
+            { category: 'Frontend', technologies: ['Antlers', 'SCSS'] },
+            { category: 'Backend', technologies: ['Laravel', 'MySQL'] },
+            { category: 'CMS', technologies: ['Statamic'] }
+        ],
+        'external_url': 'https://www.h-e.nl/'
     },
 ];
 
@@ -35,6 +67,8 @@ const mouseY = ref(0);
 const targetX = ref(0);
 const targetY = ref(0);
 const speed = 0.1;
+const hasSelectedProject = ref(false);
+const selectedProject = ref('');
 
 const updatePosition = (event) => {
   targetX.value = event.pageX - 125;
@@ -119,6 +153,17 @@ const updateImage = (image, index) => {
         nextBox.classList.remove('scroll-in', 'start-up', 'start-down');
     }, 550);
 };
+
+const viewProject = (project) => {
+    selectedProject.value = project;
+    hasSelectedProject.value = true;
+    document.body.style.overflow = 'hidden';
+}
+
+const closeProject = () => {
+    hasSelectedProject.value = false;
+    document.body.style.overflow = 'auto';
+}
 </script>
 
 <template>
@@ -136,14 +181,14 @@ const updateImage = (image, index) => {
                         class="projects__list--item" 
                         v-for="(project, i) in projects" 
                         :key="project.url" 
-                        @mouseenter="updateImage(project.url, i)"
+                        @click="viewProject(project)"
+                        @mouseenter="updateImage(project.cover_url, i)"
                         >
                         <ProjectsListItem :name="project.name" :task="project.task" :i="i" :url="project.url" />
                     </li>
                 </ul>
             </div>
         </div>
+        <ProjectsView v-if="hasSelectedProject" :closeproject="closeProject" :key="selectedProject.name" :project="selectedProject" />
     </div>
-
-    <!-- <ProjectsView /> -->
 </template>

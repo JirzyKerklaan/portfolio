@@ -26,7 +26,7 @@ import Button from '@/Components/base/PrimaryButton.vue';
                     </div>
                     <div class="two-cols__column button">
                         <div class="two-cols__button">
-                            <Button text="Contact opnemen" url="mailto:jirzykerklaan@gmail.com" />
+                            <Button text="Contact opnemen" url="mailto:jirzykerklaan@gmail.com" blank="false" />
                         </div>
                     </div>
                     <div class="two-cols__column">

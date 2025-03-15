@@ -34,12 +34,13 @@
             aspect-ratio: 16/9;
             background-color: #FAFAFA;
             pointer-events: none;
-            border-radius: 0.5rem;
+            border-radius: 15px;
             transition: opacity 0.15s linear;
             opacity: 1;
             background-position: center;
             background-size: cover;
             overflow: hidden;
+            pointer-events: none;
         
             &.fading {
                 transition: opacity 0.15s linear;
@@ -281,7 +282,7 @@
 
         &__image {
             margin-top: calc(50rem / 16);
-            background-size: 100%;
+            background-size: cover;
             background-position: center;
             width: 100%;
             aspect-ratio: 16/9;

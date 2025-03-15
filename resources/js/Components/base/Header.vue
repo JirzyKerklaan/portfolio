@@ -66,9 +66,9 @@ const closeMenu = () => {
       <div class="menu__inner">
         <div class="menu__socials">
           <span>Socials</span>
-          <a href="#">LinkedIn</a>
-          <a href="#">Instagram</a>
-          <a href="#">Github</a>
+          <a href="https://www.linkedin.com/in/jirzy-kerklaan" target="_blank">LinkedIn</a>
+          <a href="https://www.instagram.com/jirzy_vld/" target="_blank">Instagram</a>
+          <a href="https://github.com/JirzyKerklaan/" target="_blank">Github</a>
         </div>
         <div class="menu__links">
           <span>Menu</span>

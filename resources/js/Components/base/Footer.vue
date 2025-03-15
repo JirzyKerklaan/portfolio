@@ -18,9 +18,9 @@ import Button from './SecondaryButton.vue';
                         </h2>
                     </div>
                     <div class="footer__buttons">
-                        <Button url="mailto:jirzykerklaan@gmail.com" text="E-mail" />
-                        <Button url="https://github.com/JirzyKerklaan" text="Github" />
-                        <Button url="https://www.linkedin.com/in/jirzy-kerklaan" text="LinkedIn" />
+                        <Button url="mailto:jirzykerklaan@gmail.com" text="E-mail" blank="false" />
+                        <Button url="https://github.com/JirzyKerklaan" text="Github" blank="true" />
+                        <Button url="https://www.linkedin.com/in/jirzy-kerklaan" text="LinkedIn" blank="true" />
                     </div>
                     <div class="footer__fineprint">
                         <JK />
