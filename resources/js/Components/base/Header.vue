@@ -1,35 +1,30 @@
 <script setup>
 import { ref } from 'vue';
-import CloseBlack from '../svg/Close_black.vue';
-import MenuItem from '../svg/MenuIcon.vue';
 
-// State to manage menu visibility and animation
 const isMenuOpen = ref(false);
 const isMenuVisible = ref(false);
 
-// Open Menu
-const openMenu = () => {
-  isMenuVisible.value = true;
-  setTimeout(() => {
-    isMenuOpen.value = true;
-  }, 10); // Small delay to trigger transition
-};
-
-// Close Menu
-const closeMenu = () => {
-  isMenuOpen.value = false;
-  setTimeout(() => {
-    isMenuVisible.value = false; // Set display: none after sliding out
-  }, 300); // Match this to the slide-out transition duration
+const toggleMenu = () => {
+  if (isMenuVisible.value == false) {
+    isMenuVisible.value = true;
+    setTimeout(() => {
+      isMenuOpen.value = true;
+    }, 10); 
+  } else {
+    isMenuOpen.value = false;
+    setTimeout(() => {
+      isMenuVisible.value = false;
+    }, 300);
+  }
 };
 </script>
 
 <template>
   <header class="menu">
-    <div class="menu__button" @click="openMenu">
-      <span class="menu__text">menu</span>
-      <div class="menu__icon">
-        <MenuItem />
+    <div class="menu__button" @click="toggleMenu">
+      <div class="menu__icon" :class="{'open': isMenuOpen}">
+        <span></span>
+        <span></span>
       </div>
     </div>
   </header>
@@ -43,7 +38,7 @@ const closeMenu = () => {
       display: isMenuVisible ? 'block' : 'none',
       transition: 'opacity 0.2s ease'
     }"
-    @click="closeMenu"
+    @click="toggleMenu"
   ></div>
 
   <!-- Sidebar -->
@@ -57,11 +52,7 @@ const closeMenu = () => {
     }"
   >
     <div class="menu__container">
-      <!-- Close button -->
-      <div class="menu__close" @click="closeMenu">
-        <CloseBlack />
-      </div>
-
+      <div></div>
       <!-- Inner content -->
       <div class="menu__inner">
         <div class="menu__socials">

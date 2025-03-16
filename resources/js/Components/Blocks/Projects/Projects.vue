@@ -1,5 +1,5 @@
 <script setup>
-import { computed, onMounted, ref, watchEffect } from "vue";
+import { computed, onMounted, ref } from "vue";
 import ProjectsListItem from './ProjectsListItem.vue';
 import ProjectsView from './ProjectsView.vue';
 
@@ -9,55 +9,57 @@ let projects = [
         'task': 'Full-stack Development',
         'cover_url': '/assets/projects/sportverkiezingen.jpg',
         'url': '/assets/projects/sportverkiezingen-overview.jpg',
-        'description': '<p>Lorem ipsum dolor sit amet.</p>',
+        'description': "<p>In mijn tijd bij Esens Design heb ik, in opdracht van <a target='_blank' href='https://www.lekkerbezigschiedam.nl/'>Lekker bezig Schiedam</a>, een webapplicatie ontwikkeld voor de jaarlijkse sportverkiezingen. In deze verkiezing kunnen mensen stemmen op hun favoriete sport(st)er, sporttalent en sportclub van het jaar. De applicatie moest beschikken over een specifieke functionaliteit waarbij de gegevens in de database worden opgeslagen en de stemmer zijn of haar stem moet verifiëren via de mail. Tijdens de verkiezingen zijn er in totaal meer dan 1500 stemmen uitgebracht.</p> <p>De code van dit project is te vinden op mijn GitHub.</p>",
         'tech': [
             { category: 'Frontend', technologies: ['Antlers', 'SCSS'] },
             { category: 'Backend', technologies: ['Laravel', 'MySQL'] },
             { category: 'CMS', technologies: ['Statamic'] }
         ],
-        'external_url': 'https://github.com/JirzyKerklaan/Sportverkiezingen_2024'
+        'external_url': 'https://github.com/JirzyKerklaan/Sportverkiezingen_2024',
+        'color': '#393888'
     },
     {
         'name': 'Portfolio',
         'task': 'Full-stack Development / Design',
         'cover_url': '/assets/projects/portfolio.jpg',
         'url': '/assets/projects/portfolio-overview.jpg',
-        'description': '<p>Lorem ipsum dolor sit amet.</p>',
+        'description': '<p>Mijn portfolio is een webapplicatie die ik volledig zelfstandig heb ontworpen en ontwikkeld. De applicatie presenteert mijn projecten en de gebruikte technieken, en geeft een helder beeld van wie ik ben en wat ik kan. Het doel is om mijn werk op een toegankelijke manier te tonen, zodat werkgevers eenvoudig door mijn projecten kunnen bladeren en snel een goed overzicht krijgen van mijn vaardigheden en expertise.</p>',
         'tech': [
-            { category: 'Frontend', technologies: ['Antlers', 'SCSS'] },
-            { category: 'Backend', technologies: ['Laravel', 'MySQL'] },
-            { category: 'CMS', technologies: ['Statamic'] }
+            { category: 'Frontend', technologies: ['Vue', 'SCSS'] },
+            { category: 'Backend', technologies: ['Laravel', 'MySQL'] }
         ],
-        'external_url': 'https://github.com/JirzyKerklaan/portfolio-v2'
+        'external_url': 'https://github.com/JirzyKerklaan/portfolio-v2',
+        'color': '#1BDDB150'
     },
     {
         'name': 'Thrive Health',
         'task': 'Front-end Development',
         'cover_url': '/assets/projects/thrivehealth.jpg',
         'url': '/assets/projects/thrivehealth-overview.jpg',
-        'description': '<p>Lorem ipsum dolor sit amet.</p>',
+        'description': '<p>In mijn tijd bij Designated heb ik in opdracht van Thrive Health een website mogen ontwikkelen. Thrive Health is een sportschool met meerdere locaties, gespecialiseerd in personal training, CrossFit en HYROX. Ze bieden een op maat gemaakte aanpak om fitnessdoelen te bereiken met professionele begeleiding.</p><p>De website bevat complexe front-end elementen, zoals een automatische slider die onder de footer verschijnt zodra je tot het einde van de pagina scrolt. Daarnaast maakt de website gebruik van een widget waarmee bezoekers eenvoudig een les kunnen inplannen bij de sportschool."</p>',
         'tech': [
-            { category: 'Frontend', technologies: ['Antlers', 'SCSS'] },
+            { category: 'Frontend', technologies: ['Vue', 'SCSS'] },
             { category: 'Backend', technologies: ['Laravel', 'MySQL'] },
-            { category: 'CMS', technologies: ['Statamic'] }
+            { category: 'CMS', technologies: ['Strapi'] }
         ],
-        'external_url': 'https://www.thrivehealth.nl/'
+        'external_url': 'https://www.thrivehealth.nl/',
+        'color': '#14e99c50'
     },
     {
         'name': 'Hé - hospitality & events',
         'task': 'Front-end Development',
         'cover_url': '/assets/projects/he.jpg',
         'url': '/assets/projects/he-overview.jpg',
-        'description': '<p>Lorem ipsum dolor sit amet.</p>',
+        'description': '<p>In mijn tijd bij Designated heb ik in opdracht van Hé - Hospitality & events een website mogen ontwikkelen. Hé biedt catering, personeel en locaties als service aan, waarmee ze evenementen en zakelijke gelegenheden ondersteunen.</p><p>De klant wilde de verschillende services labelen op kleur, bijvoorbeeld door locaties in paars weer te geven, terwijl de algemene informatiepagina’s in de zwarte stijl moesten worden opgemaakt. Dit bracht een leuke uitdaging met zich mee. Verder bevat de website verschillende formulieren waarmee klanten eenvoudig aanvragen kunnen doen voor personeel, catering of locaties.</p>',
         'tech': [
-            { category: 'Frontend', technologies: ['Antlers', 'SCSS'] },
+            { category: 'Frontend', technologies: ['Vue', 'SCSS'] },
             { category: 'Backend', technologies: ['Laravel', 'MySQL'] },
-            { category: 'CMS', technologies: ['Statamic'] }
+            { category: 'CMS', technologies: ['Strapi'] }
         ],
-        'external_url': 'https://www.h-e.nl/'
+        'external_url': 'https://www.h-e.nl/',
+        'color': '#F28C4750'
     },
 ];
-
 const visible = ref(false);
 const fadingOut = ref(false);
 const prevImg = ref('');
@@ -69,6 +71,8 @@ const targetY = ref(0);
 const speed = 0.1;
 const hasSelectedProject = ref(false);
 const selectedProject = ref('');
+const slideProject = ref(false);
+const borderRadius = ref(false);
 
 const updatePosition = (event) => {
   targetX.value = event.pageX - 125;
@@ -111,7 +115,6 @@ const updateImage = (image, index) => {
 
     if (!box || !nextBox) return;
 
-    // If prevImgIndex is not set, just update images without animation
     if (!prevImgIndex.value && prevImgIndex.value !== 0) {
         box.style.backgroundImage = `url('${image}')`;
         nextBox.style.backgroundImage = `url('${image}')`;
@@ -122,34 +125,28 @@ const updateImage = (image, index) => {
 
     let direction = prevImgIndex.value < index ? 'down' : 'up';
 
-    // Set the new image before animation starts
     nextBox.style.backgroundImage = `url('${image}')`;
 
-    // Remove all transition classes & disable animation
     nextBox.classList.remove('scroll-in', 'start-up', 'start-down');
-    nextBox.style.transition = 'none'; // Disable transition initially
-    void nextBox.offsetWidth; // Force reflow
+    nextBox.style.transition = 'none';
+    void nextBox.offsetWidth;
 
-    // Apply starting position
     if (direction === 'down') {
-        nextBox.classList.add('start-down'); // Start below
+        nextBox.classList.add('start-down');
     } else {
-        nextBox.classList.add('start-up'); // Start above
+        nextBox.classList.add('start-up');
     }
 
-    // Re-enable transition and animate in
     setTimeout(() => {
         nextBox.style.transition = 'transform 0.5s ease-in-out';
         nextBox.classList.add('scroll-in');
-    }, 50); // Small delay to allow reflow
+    }, 50);
 
-    // Wait for animation to finish, then swap images
     setTimeout(() => {
         box.style.backgroundImage = `url('${image}')`;
         prevImg.value = box.style.backgroundImage;
         prevImgIndex.value = index;
 
-        // Reset classes for next animation
         nextBox.classList.remove('scroll-in', 'start-up', 'start-down');
     }, 550);
 };
@@ -158,11 +155,22 @@ const viewProject = (project) => {
     selectedProject.value = project;
     hasSelectedProject.value = true;
     document.body.style.overflow = 'hidden';
+    borderRadius.value = true;
+
+    setTimeout(() => {
+        slideProject.value = true;
+        borderRadius.value = false;
+    }, 250);
 }
 
 const closeProject = () => {
-    hasSelectedProject.value = false;
-    document.body.style.overflow = 'auto';
+    slideProject.value = false;
+    borderRadius.value = true;
+
+    setTimeout(() => {
+        hasSelectedProject.value = false;
+        document.body.style.overflow = 'auto';
+    }, 250);
 }
 </script>
 
@@ -173,7 +181,7 @@ const closeProject = () => {
                 <div class="projects__title">
                     <h2>Geselecteerde Projecten</h2>
                 </div>
-                <ul class="projects__list" @mousemove="updatePosition" @mouseenter="showBox" @mouseleave="hideBox" :class="{ 'hide-cursor': visible }">
+                <ul class="projects__list" @mousemove="updatePosition" @mouseenter="showBox" @mouseleave="hideBox" :class="{ 'hide-cursor': visible, 'curved': borderRadius }">
                     <div class="follow-box" id="follow-box" :class="{ fading: fadingOut }" :style="boxStyle">
                         <div class="follow-box__next-image" id="follow-box-next"></div>
                     </div>
@@ -189,6 +197,12 @@ const closeProject = () => {
                 </ul>
             </div>
         </div>
-        <ProjectsView v-if="hasSelectedProject" :closeproject="closeProject" :key="selectedProject.name" :project="selectedProject" />
+        <ProjectsView
+            v-if="hasSelectedProject"
+            :closeproject="closeProject"
+            :key="selectedProject.name"
+            :project="selectedProject"
+            :class="{'project-active': slideProject, 'curved': borderRadius}"
+        />
     </div>
 </template>

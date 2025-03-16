@@ -17,7 +17,7 @@ const props = defineProps({
         <div class="projects-view__close popup-close" @click="closeproject">
             <Close />
         </div>
-        <div class="projects-view__overlay"></div>
+        <div class="projects-view__overlay" :style="{ background: `radial-gradient(circle, ${project.color} 0%, transparent 70%)` }"></div>
         <div class="container">
             <div class="projects-view__head">
                 <h1>{{ project.name }}</h1>
@@ -33,7 +33,7 @@ const props = defineProps({
                         </div>
                         <div class="projects-view__text" v-html="project.description"></div>
                     </div>
-                    <div class="projects-view__column" :v-if="project.tech">
+                    <div class="projects-view__column sm" :v-if="project.tech">
                         <div class="projects-view__title">
                             <h2>Technieken</h2>
                         </div>
