@@ -3,7 +3,7 @@
     position: relative;
 
     @media screen and (max-width: 512px) {
-        padding-top: calc(125rem / 16);
+        padding-top: calc(75rem / 16);
 
         .container {
             margin-left: 0;
@@ -57,7 +57,11 @@
         align-items: center;
         justify-content: center;
 
-        
+        @media screen and (max-width: 760px) {
+            flex-wrap: wrap;
+            row-gap: 1rem;
+        }
+
         @media screen and (max-width: 512px) {
             margin-top: calc(35rem / 16);
         }
@@ -74,8 +78,9 @@
     }
 
     &__copyright {
-        margin-top: calc(175rem / 16);
+        margin: calc(175rem / 16) auto 0;
         padding-bottom: calc(50rem / 16);
+        max-width: 395px;
 
         
         @media screen and (max-width: 512px) {

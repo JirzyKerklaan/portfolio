@@ -59,6 +59,7 @@
                 &.start-up {
                     transform: translateY(-100%);
                     transition: none;
+                    font-size: 1.75rem;
                 }
                 
                 &.start-down {
@@ -70,6 +71,10 @@
                     transform: translateY(0);
                     transition: transform 0.15s ease-in-out;
                 }    
+            }
+
+            @media screen and (max-width: 512px) {
+                display: none !important;
             }
         }    
     }
@@ -196,6 +201,25 @@
             z-index: 3;
             cursor: pointer;
 
+            @media screen and (max-width: 760px) {
+                position: sticky;
+                width: fit-content;
+                height: fit-content;
+                left: calc(100% - 50px);
+                top: 25px;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    width: calc(100% + 30px);
+                    height: calc(100% + 30px);
+                    left: -15px;
+                    top: -17.5px;
+                    border-radius: 100%;
+                    backdrop-filter: blur(4px);
+                }
+            }
+
             svg {
                 transform: rotate(0deg);
                 transition: ease-in-out 0.25s all;
@@ -233,11 +257,20 @@
             justify-content: space-between;
             align-items: center;
 
+            @media screen and (max-width: 512px) {
+                padding-top: 3rem;
+            }
+
             h1 {
-                font-size: calc(64rem / 16);
+                font-size: 4rem;
                 font-weight: 400;
                 line-height: 1;
                 color: #FAFAFA;
+
+                @media screen and (max-width: 512px) {
+                    font-size: 1.75rem;
+                }
+                
             }
 
             a {
@@ -261,6 +294,9 @@
         &__text {
             margin-top: calc(30rem / 16);
 
+            @media screen and (max-width: 760px) {
+                margin-top: 1rem;
+            }
             p {
                 font-weight: 400;
                 font-size: 1.375rem;
@@ -268,6 +304,10 @@
                 line-height: 1.35;
                 letter-spacing: 0.05rem;
                 margin-bottom: .5rem;
+
+                @media screen and (max-width: 760px) {
+                    font-size: 1rem;
+                }
 
                 span {
                     font-weight: 400;
@@ -279,6 +319,11 @@
                     color: #FAFAFA;
                     display: block;
                     margin-bottom: 5px;
+
+                    @media screen and (max-width: 760px) {
+                        display: unset;
+                    font-size: 1rem;
+                    }
                 }
             }
 
@@ -294,6 +339,11 @@
                 color: #FAFAFA;
                 text-decoration: underline;
                 transition: all ease-in-out .15s;
+
+                @media screen and (max-width: 760px) {
+                    font-size: 1rem;
+                    letter-spacing: .025rem;
+                }
 
                 &:hover {
                     color: #FAFAFA75;
@@ -313,12 +363,20 @@
 
         &__inner {
             margin-top: calc(100rem / 16);
+            
+            @media screen and (max-width: 512px) {
+                margin-top: 3.25rem;
+            }
         }
 
         &__two-cols {
             display: flex;
             flex-direction: row;
             gap: 65px;
+
+            @media screen and (max-width: 760px) {
+                flex-direction: column;
+            }
         }
 
         &__column {
@@ -326,6 +384,10 @@
 
             &.sm {
                 width: 35%;
+                
+                @media screen and (max-width: 760px) {
+                    width: 100%;
+                }
             }
         }
 
@@ -343,6 +405,10 @@
                 line-height: 1;
                 letter-spacing: 0.05rem;
                 font-size: 1.375rem;
+                
+                @media screen and (max-width: 760px) {
+                    font-size: 1rem;
+                }
             }
         }
     }
