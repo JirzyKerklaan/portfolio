@@ -9,55 +9,61 @@ let projects = [
         'task': 'Full-stack Development',
         'cover_url': '/assets/projects/sportverkiezingen.jpg',
         'url': '/assets/projects/sportverkiezingen-overview.jpg',
+        'full_site_url': '/assets/projects/sportverkiezingen-desktop.png',
         'description': "<p>In mijn tijd bij Esens Design heb ik, in opdracht van <a target='_blank' href='https://www.lekkerbezigschiedam.nl/'>Lekker bezig Schiedam</a>, een webapplicatie ontwikkeld voor de jaarlijkse sportverkiezingen. In deze verkiezing kunnen mensen stemmen op hun favoriete sport(st)er, sporttalent en sportclub van het jaar. De applicatie moest beschikken over een specifieke functionaliteit waarbij de gegevens in de database worden opgeslagen en de stemmer zijn of haar stem moet verifiëren via de mail. Tijdens de verkiezingen zijn er in totaal meer dan 1500 stemmen uitgebracht.</p> <p>De code van dit project is te vinden op mijn GitHub.</p>",
-        'tech': [
+        'client': 'Lekkerbezigschiedam',
+        'website': 'sportverkiezingenschiedam.nl',
+        'github_url': 'https://github.com/JirzyKerklaan/Sportverkiezingen_2024',
+        'info': [
             { category: 'Frontend', technologies: ['Antlers', 'SCSS'] },
             { category: 'Backend', technologies: ['Laravel', 'MySQL'] },
             { category: 'CMS', technologies: ['Statamic'] }
-        ],
-        'external_url': 'https://github.com/JirzyKerklaan/Sportverkiezingen_2024',
-        'color': '#393888'
+        ]
     },
     {
         'name': 'Portfolio',
-        'task': 'Full-stack Development / Design',
+        'task': 'Design / Full-stack Development',
         'cover_url': '/assets/projects/portfolio.jpg',
         'url': '/assets/projects/portfolio-overview.jpg',
+        'full_site_url': '/assets/projects/portfolio-desktop.jpg',
         'description': '<p>Mijn portfolio is een webapplicatie die ik volledig zelfstandig heb ontworpen en ontwikkeld. De applicatie presenteert mijn projecten en de gebruikte technieken, en geeft een helder beeld van wie ik ben en wat ik kan. Het doel is om mijn werk op een toegankelijke manier te tonen, zodat werkgevers eenvoudig door mijn projecten kunnen bladeren en snel een goed overzicht krijgen van mijn vaardigheden en expertise.</p>',
-        'tech': [
+        'client': 'Eigen project',
+        'website': 'jirzykerklaan.nl',
+        'github_url': 'https://github.com/JirzyKerklaan/portfolio-v2',
+        'info': [
             { category: 'Frontend', technologies: ['Vue', 'SCSS'] },
             { category: 'Backend', technologies: ['Laravel', 'MySQL'] }
-        ],
-        'external_url': 'https://github.com/JirzyKerklaan/portfolio-v2',
-        'color': '#1BDDB150'
+        ]
     },
     {
         'name': 'Thrive Health',
         'task': 'Front-end Development',
         'cover_url': '/assets/projects/thrivehealth.jpg',
         'url': '/assets/projects/thrivehealth-overview.jpg',
+        'full_site_url': '/assets/projects/thrivehealth-desktop.png',
         'description': '<p>In mijn tijd bij Designated heb ik in opdracht van Thrive Health een website mogen ontwikkelen. Thrive Health is een sportschool met meerdere locaties, gespecialiseerd in personal training, CrossFit en HYROX. Ze bieden een op maat gemaakte aanpak om fitnessdoelen te bereiken met professionele begeleiding.</p><p>De website bevat complexe front-end elementen, zoals een automatische slider die onder de footer verschijnt zodra je tot het einde van de pagina scrolt. Daarnaast maakt de website gebruik van een widget waarmee bezoekers eenvoudig een les kunnen inplannen bij de sportschool."</p>',
-        'tech': [
+        'client': 'Thrive Health',
+        'website': 'thrivehealth.nl',
+        'info': [
             { category: 'Frontend', technologies: ['Vue', 'SCSS'] },
             { category: 'Backend', technologies: ['Laravel', 'MySQL'] },
             { category: 'CMS', technologies: ['Strapi'] }
-        ],
-        'external_url': 'https://www.thrivehealth.nl/',
-        'color': '#14e99c50'
+        ]
     },
     {
         'name': 'Hé - hospitality & events',
         'task': 'Front-end Development',
         'cover_url': '/assets/projects/he.jpg',
         'url': '/assets/projects/he-overview.jpg',
+        'full_site_url': '/assets/projects/he-desktop.jpg',
         'description': '<p>In mijn tijd bij Designated heb ik in opdracht van Hé - Hospitality & events een website mogen ontwikkelen. Hé biedt catering, personeel en locaties als service aan, waarmee ze evenementen en zakelijke gelegenheden ondersteunen.</p><p>De klant wilde de verschillende services labelen op kleur, bijvoorbeeld door locaties in paars weer te geven, terwijl de algemene informatiepagina’s in de zwarte stijl moesten worden opgemaakt. Dit bracht een leuke uitdaging met zich mee. Verder bevat de website verschillende formulieren waarmee klanten eenvoudig aanvragen kunnen doen voor personeel, catering of locaties.</p>',
-        'tech': [
+        'client': 'Hé - hospitality & events',
+        'website': 'h-e.nl',
+        'info': [
             { category: 'Frontend', technologies: ['Vue', 'SCSS'] },
             { category: 'Backend', technologies: ['Laravel', 'MySQL'] },
             { category: 'CMS', technologies: ['Strapi'] }
-        ],
-        'external_url': 'https://www.h-e.nl/',
-        'color': '#F28C4750'
+        ]
     },
 ];
 const visible = ref(false);
@@ -138,7 +144,7 @@ const updateImage = (image, index) => {
     }
 
     setTimeout(() => {
-        nextBox.style.transition = 'transform 0.5s ease-in-out';
+        nextBox.style.transition = 'transform 0.35s ease-in-out';
         nextBox.classList.add('scroll-in');
     }, 50);
 

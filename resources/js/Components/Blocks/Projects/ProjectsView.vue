@@ -1,52 +1,70 @@
 <script setup>
-import Arrow from '@/Components/svg/Arrow.vue';
-import Close from '@/Components/svg/Close.vue';
+import { computed, ref } from 'vue';
 
-// Define props to receive the toggleProjectView method
 const props = defineProps({
-    closeproject: {
+  closeproject: {
     type: Function,
     required: true
   },
   project: Object
 });
+
+let scrollPosition = ref(0);
+const maxScrollHeight = 500;
+
+function handleScroll(event) {
+  scrollPosition.value = event.target.scrollTop;
+}
+
+const imageWidth = computed(() => {
+  let width = 80 + (scrollPosition.value / maxScrollHeight) * 30.25;
+  if (width > 100) width = 100;
+  if (width < 80) width = 80;
+  return width;
+});
 </script>
 
 <template>
-    <div class="popup projects-view">
-        <div class="projects-view__close popup-close" @click="closeproject">
-            <Close />
-        </div>
-        <div class="projects-view__overlay" :style="{ background: `radial-gradient(circle, ${project.color} 0%, transparent 70%)` }"></div>
-        <div class="container">
-            <div class="projects-view__head">
+    <div class="popup projects-view" @scroll="handleScroll">
+        <div class="projects-view__inner">
+            <div class="projects-view__title">
                 <h1>{{ project.name }}</h1>
-                <a :href="project.external_url" target="_blank">
-                    <Arrow />
-                </a>
             </div>
-            <div class="projects-view__inner">
-                <div class="projects-view__two-cols">
-                    <div class="projects-view__column" v-if="project.description">
-                        <div class="projects-view__title">
-                            <h2>Beschrijving</h2>
+
+            <div class="projects-view__image" :style="{ width: imageWidth + '%' }">
+                <img :src="project.url">
+            </div>
+            
+            <div class="projects-view__spacer"></div>
+            <div class="projects-view__content">
+                <div class="projects-view__content--left">
+                    <div class="projects-view__description">
+                        <div class="left">
+                            <p><span>Het project</span></p>
                         </div>
-                        <div class="projects-view__text" v-html="project.description"></div>
+
+                        <div class="right" v-html="project.description"></div>
                     </div>
-                    <div class="projects-view__column sm" :v-if="project.tech">
-                        <div class="projects-view__title">
-                            <h2>Technieken</h2>
-                        </div>
-                        <div class="projects-view__text">
-                            <p v-for="item in project.tech" :key="item.category">
-                                <span>{{ item.category }}: </span>{{ item.technologies.join(', ') }}
-                            </p>
-                        </div>
-                        <div class="projects-view__text"></div>
+
+                    <div class="projects-view__full-site">
+                        <img :src="project.full_site_url">
+                    </div>
+
+                </div>
+                <div class="projects-view__content--right">
+                    <div class="projects-view__info">
+                        <p v-if="project.client"><span>Klant: </span>{{ project.client }}</p>
+                        <p v-if="project.website"><span>Website: </span><a :href="'https://' + project.website" target="_blank">{{ project.website }}</a></p>
+                        <p v-if="project.github_url"><span>Github: </span><a :href="project.github_url" target="_blank">Op Github bekijken</a></p>
+                        <p v-if="project.info" v-for="item in project.info" :key="item.category">
+                            <span>{{ item.category }}: </span>{{ item.technologies.join(', ') }}
+                        </p>
                     </div>
                 </div>
+            </div>
 
-                <div class="projects-view__image" :style="{ backgroundImage: `url(${project.url})` }"></div>
+            <div class="projects-view__close">
+                <span @click="closeproject">Andere projecten bekijken</span>
             </div>
         </div>
     </div>
