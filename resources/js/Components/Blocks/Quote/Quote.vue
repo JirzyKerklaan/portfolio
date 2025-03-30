@@ -5,8 +5,12 @@
     <div class="block__quote quote">
         <div class="container">
             <div class="quote__inner">
-                <q>Ik geloof in een ontwerpbenadering die de gebruiker centraal stelt, waarbij ik ervoor zorg dat elk
-                    project is afgestemd op de specifieke behoeften van de gebruikers.</q>
+                <q>
+                    Hey! Ik ben Jirzy, een <strong>gepassioneerde</strong> <br>
+                    full-stack <strong>softwareontwikkelaar.</strong> Met ruim een jaar <br>
+                    ervaring heb ik voor diverse klanten en bedrijven <strong> <br>
+                    op maat gemaakte websites</strong> gebouwd.
+                </q>
             </div>
         </div>
     </div>

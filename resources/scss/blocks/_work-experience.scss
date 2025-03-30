@@ -1,0 +1,138 @@
+.we {
+    padding-top: calc(150rem / 16);
+    
+    @media screen and (max-width: 512px) {
+        padding-top: calc(75rem / 16);
+    }
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+    }
+
+    &__job {
+        padding-bottom: 35px;
+        position: relative;
+        width: 100%;
+    
+        &:not(:last-child) {
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                height: 1px;
+                width: 100%;
+                max-width: 940px;
+                background-color: #0d0d0d35;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+
+    .job {
+        &__cols {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            
+            @media screen and (max-width: 512px) {
+                flex-direction: column;
+                gap: 2rem;
+            }
+        }
+
+        &__col {
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+
+            &:first-child {
+                max-width: 335px;
+            }
+
+            &:nth-child(2) {
+                width: 335px;
+            }
+
+            &:last-child {
+                max-width: 435px;
+                padding-left: 25px;
+                
+                @media screen and (max-width: 512px) {
+                    padding-left: 0;
+                }
+            }
+
+            p {
+                font-size: 20px;
+                line-height: 1.25;
+                color: #0d0d0d;
+                opacity: 75%;
+                
+                @media screen and (max-width: 512px) {
+                    font-size: 16px;
+                }
+            }
+        }
+        &__company {
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 1.12;
+            letter-spacing: 2.5%;
+            padding-bottom: 15px;
+            
+            @media screen and (max-width: 512px) {
+                padding-bottom: 0;
+                margin-bottom: -1.25rem;
+            }
+        }
+
+        &__spacer {
+            p {
+                font-size: 20px;
+                display: flex;
+
+                span {
+                    flex-grow: 1;
+                    opacity: 45%;
+                }
+            }
+
+            a {
+                color: #0d0d0d;
+                text-decoration: none;
+                padding-bottom: 5px;
+                border-bottom: #0d0d0d 2.5px solid;
+                transition: all .15s ease;
+                cursor: pointer;
+
+                &::after {
+                    content: '\f061';
+                    font-family: "FontAwesome";
+                    display: inline-block;
+                    transform: rotate(-45deg);
+                    aspect-ratio: 1/1;
+                    margin-left: .5rem;
+                    transition: all .1s ease;
+                }
+
+                &:hover {
+                    border-bottom: #1BDDB1 2.5px solid;
+                    color: #1BDDB1;
+                    
+                    &::after {
+                        color: #1BDDB1;
+                    }
+                }
+            }
+        }
+
+        &__description > p {
+            font-size: 16px;
+            letter-spacing: -2.5%;
+            line-height: 1.25;
+        }
+    }
+}

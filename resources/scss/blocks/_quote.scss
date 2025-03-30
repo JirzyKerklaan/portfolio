@@ -1,23 +1,51 @@
 .quote {
-    padding-top: calc(100rem/16);
+    padding-top: calc(165rem / 16);
+    min-height: 270px;
 
-    
     @media screen and (max-width: 512px) {
         padding-top: calc(50rem / 16);
     }
 
-    &__inner {
-        q {
-            font-size: 3rem;
-            font-weight: 600;
-            color: #0d0d0d;
-            letter-spacing: 2.5;
-            line-height: 1;
-            text-align: left;
-            
-            @media screen and (max-width: 512px) {
-                font-size: 1.75rem;
+    .container {
+        max-width: 1070px;
+        position: relative;
+    
+        &::before {
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-image: url('http://portfolio-v2.test/assets/svg/jirzy_kerklaan.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+
+            @media screen and (max-width: 1024px) {
+                content: none;
             }
         }
+    }
+
+    &__inner {
+        text-align: center;
+        q {
+            color: #0d0d0d;
+            font-size: calc(45rem / 16);
+            line-height: 1.5;
+            letter-spacing: -2.5%;
+            font-weight: 500;
+
+            @media screen and (max-width: 512px) {
+                font-size: calc(22rem / 16);
+            }
+
+            br {
+                display: none;
+            }
+        
+            b,strong {
+                font-weight: 700;
+            }
+        }
+        q:before, q:after{ content: "";}
     }
 }
