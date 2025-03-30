@@ -384,6 +384,7 @@
                 letter-spacing: -2.5%;
                 color: #FAFAFA;
                 text-decoration: underline;
+                transition: .15s ease all;
                 
                 @media screen and (max-width: 760px) {
                     font-size: 1.25rem;
@@ -392,7 +393,8 @@
 
             &:hover {
                 span {
-                    color: #1BDDB1;
+                    color: var(--hover-color, #1BDDB1);
+                    transition: .15s ease all;
                 }
             }
         }

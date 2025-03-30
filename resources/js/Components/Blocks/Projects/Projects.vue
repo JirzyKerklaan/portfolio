@@ -5,6 +5,22 @@ import ProjectsView from './ProjectsView.vue';
 
 let projects = [
     {
+        'name': 'Avezaat Cranes',
+        'task': 'Full-stack Development',
+        'cover_url': '/assets/projects/avezaat.jpg',
+        'url': '/assets/projects/avezaat-overview.jpg',
+        'full_site_url': '/assets/projects/avezaat-desktop.jpg',
+        'description': `<p>Tijdens mijn tijd bij Esens Design heb ik, in opdracht van <a target="_blank" href="https://www.avezaat.com/">Avezaat</a>, een website ontwikkeld die haar diensten op een effectieve manier presenteert.</p><p>De website bevat verschillende informatiepunten, van standaard informatiepagina's tot een nieuwssysteem en diverse projecten die gedetailleerd worden uitgelicht op aparte pagina's.</p>`,
+        'client': 'Avezaat',
+        'website': 'Avezaat.com',
+        'info': [
+            { category: 'Frontend', technologies: ['Antlers', 'SCSS'] },
+            { category: 'Backend', technologies: ['Laravel', 'MySQL'] },
+            { category: 'CMS', technologies: ['Statamic'] }
+        ],
+        'color': '#FFD500',
+    },
+    {
         'name': 'Sportverkiezingen 2024',
         'task': 'Full-stack Development',
         'cover_url': '/assets/projects/sportverkiezingen.jpg',
@@ -18,7 +34,8 @@ let projects = [
             { category: 'Frontend', technologies: ['Antlers', 'SCSS'] },
             { category: 'Backend', technologies: ['Laravel', 'MySQL'] },
             { category: 'CMS', technologies: ['Statamic'] }
-        ]
+        ],
+        'color': '#FAED45',
     },
     {
         'name': 'Portfolio',
@@ -33,22 +50,8 @@ let projects = [
         'info': [
             { category: 'Frontend', technologies: ['Vue', 'SCSS'] },
             { category: 'Backend', technologies: ['Laravel', 'MySQL'] }
-        ]
-    },
-    {
-        'name': 'Thrive Health',
-        'task': 'Front-end Development',
-        'cover_url': '/assets/projects/thrivehealth.jpg',
-        'url': '/assets/projects/thrivehealth-overview.jpg',
-        'full_site_url': '/assets/projects/thrivehealth-desktop.png',
-        'description': '<p>In mijn tijd bij Designated heb ik in opdracht van Thrive Health een website mogen ontwikkelen. Thrive Health is een sportschool met meerdere locaties, gespecialiseerd in personal training, CrossFit en HYROX. Ze bieden een op maat gemaakte aanpak om fitnessdoelen te bereiken met professionele begeleiding.</p><p>De website bevat complexe front-end elementen, zoals een automatische slider die onder de footer verschijnt zodra je tot het einde van de pagina scrolt. Daarnaast maakt de website gebruik van een widget waarmee bezoekers eenvoudig een les kunnen inplannen bij de sportschool."</p>',
-        'client': 'Thrive Health',
-        'website': 'thrivehealth.nl',
-        'info': [
-            { category: 'Frontend', technologies: ['Vue', 'SCSS'] },
-            { category: 'Backend', technologies: ['Laravel', 'MySQL'] },
-            { category: 'CMS', technologies: ['Strapi'] }
-        ]
+        ],
+        'color': '#1BDDB1',
     },
     {
         'name': 'Hé - hospitality & events',
@@ -63,7 +66,8 @@ let projects = [
             { category: 'Frontend', technologies: ['Vue', 'SCSS'] },
             { category: 'Backend', technologies: ['Laravel', 'MySQL'] },
             { category: 'CMS', technologies: ['Strapi'] }
-        ]
+        ],
+        'color': '#F28C47',
     },
 ];
 const visible = ref(false);

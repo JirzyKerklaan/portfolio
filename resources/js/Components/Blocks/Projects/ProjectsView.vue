@@ -64,7 +64,7 @@ const imageWidth = computed(() => {
             </div>
 
             <div class="projects-view__close">
-                <span @click="closeproject">Andere projecten bekijken</span>
+                <span @click="closeproject" :style="{ '--hover-color': project.color }">Andere projecten bekijken</span>
             </div>
         </div>
     </div>
