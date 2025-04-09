@@ -19,11 +19,11 @@
 
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-3K805ZZWE4"></script>
         <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-        gtag('config', 'G-3K805ZZWE4');
+            gtag('config', 'G-3K805ZZWE4');
         </script>
     </head>
     <body class="font-sans antialiased">

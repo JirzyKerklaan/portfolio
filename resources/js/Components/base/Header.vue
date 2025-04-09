@@ -64,6 +64,7 @@ const toggleMenu = () => {
         <div class="menu__links">
           <span>Menu</span>
           <a href="#about">Over mij</a>
+          <a href="#workexperience">Werk ervaring</a>
           <a href="#projects">Projecten</a>
           <a href="#contact">Contact</a>
         </div>

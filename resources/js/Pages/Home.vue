@@ -15,7 +15,7 @@ import WorkExperience from '@/Components/Blocks/WorkExperience/WorkExperience.vu
   <Quote id="about" />
   <Skills />
   <FourCols />
-  <WorkExperience />
+  <WorkExperience id="workexperience" />
   <Projects id="projects" />
   <Footer id="contact"/>
 </template>
