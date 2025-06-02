@@ -17,7 +17,7 @@ function handleScroll(event) {
 }
 
 const imageWidth = computed(() => {
-  let width = 80 + (scrollPosition.value / maxScrollHeight) * 30.25;
+  let width = 80 + (scrollPosition.value / maxScrollHeight) * 26.25;
   if (width > 100) width = 100;
   if (width < 80) width = 80;
   return width;

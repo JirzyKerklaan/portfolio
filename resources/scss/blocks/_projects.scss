@@ -229,6 +229,9 @@
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
             overflow: hidden;
+            position: sticky;
+            top: 0;
+            z-index: 0;
             
             @media screen and (max-width: 760px) {
                 width: 100% !important;
@@ -246,6 +249,10 @@
         &__spacer {
             height: 7.8125rem;
             width: 100%;
+            background-color: #0D0D0D;
+            z-index: 1;
+            position: relative;
+            margin-bottom: -2px;
 
             @media screen and (max-width: 760px) {
                 height: 3.25rem;
@@ -253,10 +260,13 @@
         }
 
         &__content {
-            margin-left: 7.5rem;
-            width: fit-content;
+            padding-left: 7.5rem;
+            width: 100%;
             display: flex;
             flex-direction: row;
+            background-color: #0D0D0D;
+            z-index: 1;
+            position: relative;
 
             @media screen and (max-width: 760px) {
                 flex-direction: column-reverse;
@@ -327,6 +337,8 @@
             max-width: 1120px;
             border-radius: 15px;
             overflow: hidden;
+            z-index: 1;
+            position: relative;
             
             @media screen and (max-width: 760px) {
                 margin-top: 3.25rem;
@@ -370,12 +382,17 @@
         }
 
         &__close {
-            width: fit-content;
-            margin: 12.5rem auto 0;
-            cursor: pointer;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 12.5rem;
+            background-color: #0D0D0D;
+            z-index: 1;
+            position: relative;
             
             @media screen and (max-width: 760px) {
-                margin-top: 3.25rem;
+                padding-top: 3.25rem;
             }
 
             span {
@@ -385,14 +402,13 @@
                 color: #FAFAFA;
                 text-decoration: underline;
                 transition: .15s ease all;
+                cursor: pointer;
                 
                 @media screen and (max-width: 760px) {
                     font-size: 1.25rem;
                 }
-            }
 
-            &:hover {
-                span {
+                &:hover {
                     color: var(--hover-color, #1BDDB1);
                     transition: .15s ease all;
                 }
