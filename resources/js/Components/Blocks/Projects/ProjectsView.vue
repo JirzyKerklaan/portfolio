@@ -34,7 +34,7 @@ const imageWidth = computed(() => {
             <div class="projects-view__image" :style="{ width: imageWidth + '%' }">
                 <img :src="project.url">
             </div>
-            
+
             <div class="projects-view__spacer"></div>
             <div class="projects-view__content">
                 <div class="projects-view__content--left">
@@ -53,7 +53,7 @@ const imageWidth = computed(() => {
                 </div>
                 <div class="projects-view__content--right">
                     <div class="projects-view__info">
-                        <p v-if="project.client"><span>Klant: </span>{{ project.client }}</p>
+                        <p v-if="project.client"><span>Voor: </span>{{ project.client }}</p>
                         <p v-if="project.website"><span>Website: </span><a :href="'https://' + project.website" target="_blank">{{ project.website }}</a></p>
                         <p v-if="project.github_url"><span>Github: </span><a :href="project.github_url" target="_blank">Op Github bekijken</a></p>
                         <p v-if="project.info" v-for="item in project.info" :key="item.category">

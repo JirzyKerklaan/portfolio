@@ -36,9 +36,11 @@
         color: #FAFAFA;
 
         &__gradient {
-            background: -webkit-linear-gradient(0deg, #1BDDB1, #1BC0DD);
+            background: linear-gradient(270deg, #1BDDB1, #1BC0DD, #1BDDB1);
+            background-size: 400% 100%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            animation: gradientLoop 12s ease infinite;
         }
 
         @media screen and (max-width: 512px) {
@@ -60,5 +62,17 @@
             font-size: 1rem;
             margin-top: 1rem;
         }
+    }
+}
+
+@keyframes gradientLoop {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
     }
 }

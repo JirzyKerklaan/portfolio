@@ -28,7 +28,7 @@ import Button from './SecondaryButton.vue';
                     </div>
                     <div class="footer__copyright">
                         <p>
-                        &copy; Jirzy Kerklaan 2024. Alle rechten voorbehouden. Locatie: Nederland.
+                        &copy; Jirzy Kerklaan 2025. Alle rechten voorbehouden. Locatie: Nederland.
                         Deze site toont mijn persoonlijke projecten en professionele werk.
                         Inhoud mag niet zonder mijn toestemming worden gebruikt.
                         </p>

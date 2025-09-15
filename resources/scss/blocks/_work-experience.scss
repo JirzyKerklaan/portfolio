@@ -1,6 +1,6 @@
 .we {
     padding-top: calc(150rem / 16);
-    
+
     @media screen and (max-width: 512px) {
         padding-top: calc(75rem / 16);
     }
@@ -15,7 +15,7 @@
         padding-bottom: 35px;
         position: relative;
         width: 100%;
-    
+
         &:not(:last-child) {
             &::after {
                 content: '';
@@ -36,7 +36,7 @@
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            
+
             @media screen and (max-width: 512px) {
                 flex-direction: column;
                 gap: 2rem;
@@ -59,7 +59,7 @@
             &:last-child {
                 max-width: 435px;
                 padding-left: 25px;
-                
+
                 @media screen and (max-width: 512px) {
                     padding-left: 0;
                 }
@@ -70,7 +70,8 @@
                 line-height: 1.25;
                 color: #0d0d0d;
                 opacity: 75%;
-                
+                font-weight: 400;
+
                 @media screen and (max-width: 512px) {
                     font-size: 16px;
                 }
@@ -78,11 +79,11 @@
         }
         &__company {
             font-size: 24px;
-            font-weight: 600;
+            font-weight: 400;
             line-height: 1.12;
             letter-spacing: 2.5%;
             padding-bottom: 15px;
-            
+
             @media screen and (max-width: 512px) {
                 padding-bottom: 0;
                 margin-bottom: -1.25rem;
@@ -121,7 +122,7 @@
                 &:hover {
                     border-bottom: #1BDDB1 2.5px solid;
                     color: #1BDDB1;
-                    
+
                     &::after {
                         color: #1BDDB1;
                     }

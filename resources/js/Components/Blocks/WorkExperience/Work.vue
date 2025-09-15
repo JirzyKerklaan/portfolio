@@ -11,7 +11,7 @@ const props = defineProps({
         <div class="job__cols">
             <div class="job__col">
                 <div class="job__short-desc">
-                    <p>{{job.short_desc}}</p>
+                    <p>{{job.company_desc}}</p>
                 </div>
                 <div class="job__time">
                     <p>{{job.time}}</p>
