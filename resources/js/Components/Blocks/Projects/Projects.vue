@@ -119,9 +119,9 @@ const viewProject = (project) => {
     hasSelectedProject.value = true;
     slideProject.value = false;
     borderRadius.value = true;
-    document.body.style.overflow = 'hidden';
 
     setTimeout(() => {
+        document.body.style.overflow = 'hidden';
         slideProject.value = true;
         borderRadius.value = false;
     }, 50);
@@ -130,10 +130,10 @@ const viewProject = (project) => {
 const closeProject = () => {
     borderRadius.value = true;
     slideProject.value = false;
+    document.body.style.overflow = 'auto';
 
     setTimeout(() => {
         hasSelectedProject.value = false;
-        document.body.style.overflow = 'auto';
         borderRadius.value = false;
     }, 300);
 }
