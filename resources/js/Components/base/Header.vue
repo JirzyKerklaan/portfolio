@@ -1,21 +1,34 @@
 <script setup>
 import { ref } from 'vue';
 
+import gsap from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
 const isMenuOpen = ref(false);
 const isMenuVisible = ref(false);
 
+gsap.registerPlugin(ScrollToPlugin);
+
 const toggleMenu = () => {
-  if (isMenuVisible.value == false) {
+  if (isMenuVisible.value === false) {
     isMenuVisible.value = true;
     setTimeout(() => {
       isMenuOpen.value = true;
-    }, 10); 
+    }, 10);
   } else {
     isMenuOpen.value = false;
     setTimeout(() => {
       isMenuVisible.value = false;
     }, 300);
   }
+};
+
+window.scrollToElement = (element) => {
+    gsap.to(window, {
+        duration: 0.5,
+        scrollTo: element,
+        ease: "power2.out"
+    });
 };
 </script>
 
@@ -63,10 +76,10 @@ const toggleMenu = () => {
         </div>
         <div class="menu__links">
           <span>Menu</span>
-          <a href="#about">Over mij</a>
-          <a href="#workexperience">Werk ervaring</a>
-          <a href="#projects">Projecten</a>
-          <a href="#contact">Contact</a>
+          <span class="menu__link" onclick="scrollToElement('#about')">Over mij</span>
+          <span class="menu__link" onclick="scrollToElement('#workexperience')">Werk ervaring</span>
+          <span class="menu__link" onclick="scrollToElement('#projects')">Projecten</span>
+          <span class="menu__link" onclick="scrollToElement('#contact')">Contact</span>
         </div>
       </div>
 

@@ -1,7 +1,22 @@
 <script setup>
-import { computed, onMounted, ref } from "vue";
-import ProjectsListItem from './ProjectsListItem.vue';
-import ProjectsView from './ProjectsView.vue';
+import { ref, onMounted } from 'vue'
+import ProjectsListItem from "@/Components/Blocks/Projects/ProjectsListItem.vue";
+import gsap from 'gsap'
+import ProjectsView from "@/Components/Blocks/Projects/ProjectsView.vue";
+
+const currentImage = ref('')
+const fadingOut = ref(false)
+const followBox = ref(null)
+const mouseX = ref(0);
+const mouseY = ref(0);
+const targetX = ref(0);
+const targetY = ref(0);
+const speed = 0.15;
+const currentHoverIndex = ref(0);
+const hasSelectedProject = ref(false);
+const selectedProject = ref('');
+const slideProject = ref(false);
+const borderRadius = ref(false);
 
 let projects = [
     {
@@ -69,118 +84,73 @@ let projects = [
         'color': '#F28C47',
     },
 ];
-const visible = ref(false);
-const fadingOut = ref(false);
-const prevImg = ref('');
-const prevImgIndex = ref('');
-const mouseX = ref(0);
-const mouseY = ref(0);
-const targetX = ref(0);
-const targetY = ref(0);
-const speed = 0.1;
-const hasSelectedProject = ref(false);
-const selectedProject = ref('');
-const slideProject = ref(false);
-const borderRadius = ref(false);
 
-const updatePosition = (event) => {
-  targetX.value = event.pageX - 125;
-  targetY.value = event.pageY - 50;
-};
+function showBox() {
+    fadingOut.value = false
+    gsap.to(followBox.value, { opacity: 1, duration: 0.3 })
+}
 
-const showBox = () => {
-  visible.value = true;
-  fadingOut.value = false;
-};
+function hideBox() {
+    fadingOut.value = true
+    gsap.to(followBox.value, { opacity: 0, duration: 0.3 })
+}
 
-const hideBox = () => {
-  fadingOut.value = true;
-  prevImg.value = '';
-  prevImgIndex.value = '';
-  setTimeout(() => {
-    visible.value = false;
-  }, 300);
-};
+function updateImage(url) {
+    currentImage.value = url
+}
 
-const animate = () => {
-  mouseX.value += (targetX.value - mouseX.value) * speed;
-  mouseY.value += (targetY.value - mouseY.value) * speed;
-  requestAnimationFrame(animate);
-};
+function onMouseMove(event) {
+    targetX.value = event.clientX - 137.5;
+    targetY.value = event.clientY - 77;
+}
 
-onMounted(() => {
-    animate();
-    hideBox();
-});
-
-const boxStyle = computed(() => ({
-    left: `${mouseX.value}px !important`,
-    top: `${mouseY.value}px !important`,
-}));
-
-const updateImage = (image, index) => {
-    const box = document.getElementById('follow-box');
-    const nextBox = document.getElementById('follow-box-next');
-
-    if (!box || !nextBox) return;
-
-    if (!prevImgIndex.value && prevImgIndex.value !== 0) {
-        box.style.backgroundImage = `url('${image}')`;
-        nextBox.style.backgroundImage = `url('${image}')`;
-        prevImg.value = box.style.backgroundImage;
-        prevImgIndex.value = index;
-        return;
+function animateFollowBox() {
+    const move = () => {
+        mouseX.value += (targetX.value - mouseX.value) * speed
+        mouseY.value += (targetY.value - mouseY.value) * speed
+        gsap.set(followBox.value, { x: mouseX.value, y: mouseY.value })
+        requestAnimationFrame(move)
     }
-
-    let direction = prevImgIndex.value < index ? 'down' : 'up';
-
-    nextBox.style.backgroundImage = `url('${image}')`;
-
-    nextBox.classList.remove('scroll-in', 'start-up', 'start-down');
-    nextBox.style.transition = 'none';
-    void nextBox.offsetWidth;
-
-    if (direction === 'down') {
-        nextBox.classList.add('start-down');
-    } else {
-        nextBox.classList.add('start-up');
-    }
-
-    setTimeout(() => {
-        nextBox.style.transition = 'transform 0.35s ease-in-out';
-        nextBox.classList.add('scroll-in');
-    }, 50);
-
-    setTimeout(() => {
-        box.style.backgroundImage = `url('${image}')`;
-        prevImg.value = box.style.backgroundImage;
-        prevImgIndex.value = index;
-
-        nextBox.classList.remove('scroll-in', 'start-up', 'start-down');
-    }, 550);
-};
+    move()
+}
 
 const viewProject = (project) => {
     selectedProject.value = project;
     hasSelectedProject.value = true;
-    document.body.style.overflow = 'hidden';
+    slideProject.value = false;
     borderRadius.value = true;
+    document.body.style.overflow = 'hidden';
 
     setTimeout(() => {
         slideProject.value = true;
         borderRadius.value = false;
-    }, 250);
+    }, 50);
 }
 
 const closeProject = () => {
-    slideProject.value = false;
     borderRadius.value = true;
+    slideProject.value = false;
 
     setTimeout(() => {
         hasSelectedProject.value = false;
         document.body.style.overflow = 'auto';
-    }, 250);
+        borderRadius.value = false;
+    }, 300);
 }
+
+const scrollImage = (index) => {
+    const inner = followBox.value.querySelector('.follow-box__inner')
+    gsap.to(inner, {
+        duration: 0.5,
+        y: -index * 155,
+        ease: 'power3.out'
+    })
+}
+
+onMounted(() => {
+    hideBox();
+    animateFollowBox();
+})
 </script>
 
 <template>
@@ -190,17 +160,33 @@ const closeProject = () => {
                 <div class="projects__title">
                     <h2>Geselecteerde Projecten</h2>
                 </div>
-                <ul class="projects__list" @mousemove="updatePosition" @mouseenter="showBox" @mouseleave="hideBox" :class="{ 'hide-cursor': visible, 'curved': borderRadius }">
-                    <div class="follow-box" id="follow-box" :class="{ fading: fadingOut }" :style="boxStyle">
-                        <div class="follow-box__next-image" id="follow-box-next"></div>
+                <ul
+                    class="projects__list hide-cursor"
+                    @mousemove="onMouseMove"
+                    @mouseenter="showBox"
+                    @mouseleave="hideBox"
+                >
+                    <div
+                        class="follow-box"
+                        ref="followBox"
+                        :class="{ fading: fadingOut }"
+                    >
+                        <div class="follow-box__inner">
+                            <div
+                                class="follow-box__next-image"
+                                v-for="(project, i) in projects"
+                                :key="i"
+                                :style="{ backgroundImage: `url(${project.cover_url})` }"
+                            ></div>
+                        </div>
                     </div>
                     <li
                         class="projects__list--item"
                         v-for="(project, i) in projects"
                         :key="project.url"
                         @click="viewProject(project)"
-                        @mouseenter="updateImage(project.cover_url, i)"
-                        >
+                        @mouseenter="scrollImage(i)"
+                    >
                         <ProjectsListItem :name="project.name" :task="project.task" :i="i" :url="project.url" />
                     </li>
                 </ul>
