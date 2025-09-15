@@ -3,9 +3,19 @@ import Work from './Work.vue';
 
 let jobs = [
     {
+        'company': 'Goedemiddag!',
+        'company_desc': 'Goedemiddag! uit Delft ontwerpt en bouwt online software voor een brede klantengroep.',
+        'time': 'SEP 2024 - HEDEN',
+        'function': 'Full-stack developer',
+        'location': 'Delft',
+        'website_link': 'https://goedemiddag.nl/',
+        'website_label': 'goedemiddag.nl',
+        'description': '<p>Als full-stack developer bij Goedemiddag! heb ik gewerkt aan complexe, schaalbare en gebruiksvriendelijke webapplicaties.</p>'
+    },
+    {
         'company': 'Esens',
         'company_desc': 'Creatief bureau met 23 jaar ervaring',
-        'time': 'SEP 2024 - HEDEN',
+        'time': 'SEP 2024 - JUL 2025',
         'function': 'Full-stack developer',
         'location': 'Rotterdam',
         'website_link': 'https://esens.nl/',

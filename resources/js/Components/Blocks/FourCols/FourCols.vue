@@ -30,7 +30,7 @@
                         <h3>Wat zoek ik?</h3>
                     </div>
                     <div class="column__content">
-                        <p>Ik zoek een uitdagende functie waar ik mijn skills verder kan ontwikkelen.</p>
+                        <p>Op dit moment ben ik niet opzoek naar nieuwe uitdagingen.</p>
                     </div>
                 </div>
 

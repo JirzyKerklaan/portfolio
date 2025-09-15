@@ -29,7 +29,6 @@ let projects = [
         'description': "<p>In mijn tijd bij Esens Design heb ik, in opdracht van <a target='_blank' href='https://www.lekkerbezigschiedam.nl/'>Lekker bezig Schiedam</a>, een webapplicatie ontwikkeld voor de jaarlijkse sportverkiezingen. In deze verkiezing kunnen mensen stemmen op hun favoriete sport(st)er, sporttalent en sportclub van het jaar. De stemmen worden opgeslagen in de database, ook moet elke stem geverifiëerd worden. Dit heb ik gedaan door de stemmer een mail te sturen op het ingevulde e-mailadres. Tijdens de verkiezingen zijn er in totaal meer dan 1500 stemmen uitgebracht.</p>",
         'client': 'Lekkerbezigschiedam',
         'website': 'sportverkiezingenschiedam.nl',
-        'github_url': 'https://github.com/JirzyKerklaan/Sportverkiezingen_2024',
         'info': [
             { category: 'Frontend', technologies: ['Antlers', 'SCSS'] },
             { category: 'Backend', technologies: ['Laravel', 'MySQL'] },
@@ -196,9 +195,9 @@ const closeProject = () => {
                         <div class="follow-box__next-image" id="follow-box-next"></div>
                     </div>
                     <li
-                        class="projects__list--item" 
-                        v-for="(project, i) in projects" 
-                        :key="project.url" 
+                        class="projects__list--item"
+                        v-for="(project, i) in projects"
+                        :key="project.url"
                         @click="viewProject(project)"
                         @mouseenter="updateImage(project.cover_url, i)"
                         >
