@@ -4,8 +4,8 @@ import Work from './Work.vue';
 let jobs = [
     {
         'company': 'Goedemiddag!',
-        'company_desc': 'Bouwt apps voor diverse klanten.',
-        'time': 'SEP 2025 - HEDEN',
+        'company_desc': 'Bouwt apps voor diverse klanten',
+        'time': 'AUG 2025 - HEDEN',
         'function': 'Full-stack developer',
         'location': 'Delft',
         'website_link': 'https://goedemiddag.nl/',

@@ -6,6 +6,7 @@
 
 html {
     scroll-behavior: smooth;
+    position: relative;
 }
 
 #app {
@@ -32,4 +33,19 @@ html {
             width: 100%;
         }
     }
+}
+
+.load__overlay {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 1);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: none;
 }

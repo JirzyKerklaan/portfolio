@@ -24,10 +24,11 @@ const toggleMenu = () => {
 };
 
 window.scrollToElement = (element) => {
+    toggleMenu();
     gsap.to(window, {
-        duration: 0.5,
+        duration: 0.15,
         scrollTo: element,
-        ease: "power2.out"
+        ease: "ease"
     });
 };
 </script>

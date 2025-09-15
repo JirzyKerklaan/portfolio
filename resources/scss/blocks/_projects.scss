@@ -69,12 +69,20 @@
         &__inner {
             width: 100%;
             padding: calc(56rem / 16) 0;
-            border-bottom: 1px solid #0d0d0d50;
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: space-between;
             transition: ease-in-out .15s all;
+
+            ~.underline {
+                display: block;
+                width: 100%;
+                height: 1px;
+                background-color: #0d0d0d50;
+                transform: scaleX(0);
+                transform-origin: left;
+            }
 
 
             @media screen and (max-width: 512px) {
@@ -136,8 +144,9 @@
         }
 
         &__inner:hover {
-            border-bottom: 1px solid #0d0d0d;
-            transition: ease-in-out .15s all;
+        ~.underline {
+            background-color: #0d0d0d;
+        }
 
             .projects--project__name {
                 h3 {
