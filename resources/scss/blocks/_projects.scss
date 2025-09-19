@@ -170,11 +170,11 @@
         top: 0;
         left: 0;
         width: 100%;
-        z-index: 250;
         padding-bottom: 125px;
         box-sizing: border-box;
         transition: all .25s ease-in-out;
         overflow-y: auto;
+        z-index: 9999;
 
         @media screen and (max-width: 760px) {
             padding-bottom: 3.25rem;

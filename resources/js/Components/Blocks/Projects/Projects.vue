@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import {ref, onMounted, onBeforeMount} from 'vue'
 import ProjectsListItem from "@/Components/Blocks/Projects/ProjectsListItem.vue";
 import gsap from 'gsap'
 
@@ -49,10 +49,15 @@ const scrollImage = (index) => {
     })
 }
 
+onBeforeMount(() => {
+    hideBox();
+})
+
 onMounted(() => {
     hideBox();
     animateFollowBox();
 })
+
 </script>
 
 <template>
@@ -88,7 +93,13 @@ onMounted(() => {
                         :key="project.thumbnail_url"
                         @mouseenter="scrollImage(i)"
                     >
-                        <ProjectsListItem :name="project.name" :task="project.task" :i="i" :url="project.url" />
+                        <ProjectsListItem
+                            :name="project.name"
+                            :task="project.task"
+                            :i="i"
+                            :url="project.url"
+                            @open="$emit('open', $event)"
+                        />
                     </li>
                 </ul>
             </div>

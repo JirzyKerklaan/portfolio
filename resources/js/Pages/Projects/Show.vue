@@ -30,7 +30,6 @@ const groupedTechnologies = computed(() => {
 </script>
 
 <template>
-    <transition name="swipe-up" mode="out-in" appear>
         <div class="projects-view" @scroll="handleScroll">
             <div class="projects-view__inner">
                 <div class="projects-view__title">
@@ -74,7 +73,6 @@ const groupedTechnologies = computed(() => {
                 </div>
             </div>
         </div>
-    </transition>
 </template>
 
 <style scoped>
