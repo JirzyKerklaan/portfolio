@@ -7,6 +7,10 @@ import Skills from '@/Components/Blocks/Skills/Skills.vue';
 import Projects from '@/Components/Blocks/Projects/Projects.vue';
 import FourCols from '@/Components/Blocks/FourCols/FourCols.vue';
 import WorkExperience from '@/Components/Blocks/WorkExperience/WorkExperience.vue';
+
+defineProps({
+    projects: Array,
+})
 </script>
 
 <template>
@@ -16,6 +20,6 @@ import WorkExperience from '@/Components/Blocks/WorkExperience/WorkExperience.vu
     <Skills />
     <FourCols />
     <WorkExperience id="workexperience" />
-    <Projects id="projects" />
+    <Projects :projects="projects" id="projects" />
     <Footer id="contact"/>
 </template>

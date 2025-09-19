@@ -14,7 +14,7 @@ onMounted(async () => {
     const split = new SplitText(quoteRef.value, { type: 'words, chars' })
 
     gsap.from(split.chars, {
-        opacity: 0.45,
+        opacity: 0.25,
         stagger: 0.03,
         duration: 0.6,
         ease: 'power2.out',
