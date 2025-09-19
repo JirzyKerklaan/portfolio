@@ -1,10 +1,13 @@
 <script setup>
-import { computed, ref } from 'vue';
+import gsap from "gsap";
+import {computed, onMounted, ref} from 'vue';
 import { Link } from "@inertiajs/vue3";
 
 const props = defineProps({
     project: Object
 });
+
+const projectsViewRef = ref(null);
 
 const scrollPosition = ref(0);
 const maxScrollHeight = 500;
@@ -27,52 +30,64 @@ const groupedTechnologies = computed(() => {
         return acc;
     }, {});
 });
+
+onMounted(() => {
+    if (projectsViewRef.value) {
+        gsap.from(projectsViewRef.value, {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            ease: "power3.out"
+        });
+    }
+});
+
 </script>
 
 <template>
-        <div class="projects-view" @scroll="handleScroll">
-            <div class="projects-view__inner">
-                <div class="projects-view__title">
-                    <h1>{{ project.name }}</h1>
-                </div>
+    <div class="projects-view" @scroll="handleScroll">
+        <div class="projects-view__inner" ref="projectsViewRef">
+            <div class="projects-view__title">
+                <h1>{{ project.name }}</h1>
+            </div>
 
-                <div class="projects-view__image" :style="{ width: imageWidth + '%' }">
-                    <img :src="project.thumbnail_url">
-                </div>
+            <div class="projects-view__image" :style="{ width: imageWidth + '%' }">
+                <img :src="project.thumbnail_url">
+            </div>
 
-                <div class="projects-view__spacer"></div>
-                <div class="projects-view__content">
-                    <div class="projects-view__content--left">
-                        <div class="projects-view__description">
-                            <div class="left">
-                                <p><span>Het project</span></p>
-                            </div>
-
-                            <div class="right" v-html="project.description"></div>
+            <div class="projects-view__spacer"></div>
+            <div class="projects-view__content">
+                <div class="projects-view__content--left">
+                    <div class="projects-view__description">
+                        <div class="left">
+                            <p><span>Het project</span></p>
                         </div>
 
-                        <div class="projects-view__full-site">
-                            <img :src="project.full_site_url">
-                        </div>
+                        <div class="right" v-html="project.description"></div>
                     </div>
 
-                    <div class="projects-view__content--right">
-                        <div class="projects-view__info">
-                            <p v-if="project.client"><span>Voor: </span>{{ project.client }}</p>
-                            <p v-if="project.website"><span>Website: </span><a :href="'https://' + project.website" target="_blank">{{ project.website }}</a></p>
-                            <p v-if="project.github_url"><span>Github: </span><a :href="project.github_url" target="_blank">Op Github bekijken</a></p>
-                            <p v-if="groupedTechnologies" v-for="(techs, category) in groupedTechnologies" :key="category">
-                                <span>{{ category }}: </span> {{ techs.join(', ') }}
-                            </p>
-                        </div>
+                    <div class="projects-view__full-site">
+                        <img :src="project.full_site_url">
                     </div>
                 </div>
 
-                <div class="projects-view__close">
-                    <Link as="span" href="/" :style="{ '--hover-color': project.color }">Andere projecten bekijken</Link>
+                <div class="projects-view__content--right">
+                    <div class="projects-view__info">
+                        <p v-if="project.client"><span>Voor: </span>{{ project.client }}</p>
+                        <p v-if="project.website"><span>Website: </span><a :href="'https://' + project.website" target="_blank">{{ project.website }}</a></p>
+                        <p v-if="project.github_url"><span>Github: </span><a :href="project.github_url" target="_blank">Op Github bekijken</a></p>
+                        <p v-if="groupedTechnologies" v-for="(techs, category) in groupedTechnologies" :key="category">
+                            <span>{{ category }}: </span> {{ techs.join(', ') }}
+                        </p>
+                    </div>
                 </div>
             </div>
+
+            <div class="projects-view__close">
+                <Link as="span" href="/" :style="{ '--hover-color': project.color }">Andere projecten bekijken</Link>
+            </div>
         </div>
+    </div>
 </template>
 
 <style scoped>
