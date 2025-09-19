@@ -23,10 +23,6 @@
             }
         }
 
-        &.hide-cursor {
-            cursor: none;
-        }
-
         .projects__list {
             position: relative;
         }
@@ -43,6 +39,10 @@
             aspect-ratio: 16/9;
             z-index: 1000;
             transition: opacity 0.15s;
+
+            @media screen and (max-width: 512px) {
+                display: none;
+            }
 
             &.fading {
                 opacity: 0 !important;
