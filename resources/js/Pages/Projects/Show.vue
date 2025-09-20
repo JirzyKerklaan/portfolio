@@ -1,7 +1,7 @@
 <script setup>
 import gsap from "gsap";
 import {computed, onMounted, ref} from 'vue';
-import { Link } from "@inertiajs/vue3";
+import {router} from "@inertiajs/vue3";
 
 const props = defineProps({
     project: Object
@@ -31,6 +31,28 @@ const groupedTechnologies = computed(() => {
     }, {});
 });
 
+const closeProject = () => {
+    if (projectsViewRef.value) {
+        gsap.to(projectsViewRef.value, {
+            opacity: 0,
+            y: 50,
+            duration: .65,
+            ease: "power3.out",
+            onComplete: redirectToHome
+        });
+    }
+};
+
+const redirectToHome = () => {
+    sessionStorage.setItem('fromProject', 'true');
+
+    router.visit('/', {
+        preserveState: false,
+        replace: false,
+        data: {},
+    });
+};
+
 onMounted(() => {
     if (projectsViewRef.value) {
         gsap.from(projectsViewRef.value, {
@@ -41,7 +63,6 @@ onMounted(() => {
         });
     }
 });
-
 </script>
 
 <template>
@@ -84,7 +105,7 @@ onMounted(() => {
             </div>
 
             <div class="projects-view__close">
-                <Link as="span" href="/" :style="{ '--hover-color': project.color }">Andere projecten bekijken</Link>
+                <span @click="closeProject()" :style="{ '--hover-color': project.color }">Andere projecten bekijken</span>
             </div>
         </div>
     </div>

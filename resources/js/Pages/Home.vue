@@ -1,6 +1,8 @@
 <script setup>
-import { ref } from 'vue';
-import {router} from '@inertiajs/vue3';
+import { onMounted, ref } from 'vue';
+import { router } from '@inertiajs/vue3';
+import { gsap } from 'gsap';
+import {ScrollToPlugin} from "gsap/ScrollToPlugin";
 
 import Header from '@/Components/base/Header.vue';
 import Footer from '@/Components/base/Footer.vue';
@@ -13,7 +15,9 @@ import WorkExperience from '@/Components/Blocks/WorkExperience/WorkExperience.vu
 
 defineProps({
     projects: Array,
-})
+});
+
+gsap.registerPlugin(ScrollToPlugin);
 
 const isAnimating = ref(false);
 const targetUrl = ref('');
@@ -24,12 +28,16 @@ function openProject(url) {
     targetUrl.value = url;
     isAnimating.value = true;
 
+    sessionStorage.setItem('fromProject', 'true');
+
     const overlay = document.createElement('div');
     overlay.className = 'projects-swipe-overlay';
+
+    gsap.set(overlay, { y: 0, opacity: 1 });
+
     document.body.appendChild(overlay);
 
     void overlay.offsetWidth;
-
     overlay.classList.add('projects-swipe-overlay--active');
 
     setTimeout(() => {
@@ -37,10 +45,48 @@ function openProject(url) {
             onFinish: () => {
                 overlay.remove();
                 isAnimating.value = false;
-            }
+            },
         });
     }, 350);
 }
+
+function animateOverlayFromProject() {
+    gsap.to(window, {
+        duration: 0.15,
+        scrollTo: '#projects',
+        ease: "ease"
+    });
+
+    if (isAnimating.value) return;
+    isAnimating.value = true;
+
+    const overlay = document.createElement('div');
+    overlay.className = 'projects-swipe-overlay';
+    overlay.classList.add('projects-swipe-overlay--active');
+
+    gsap.to(overlay, { y: 0, opacity: 1, duration: 0.01});
+    document.body.appendChild(overlay);
+
+    void overlay.offsetWidth;
+
+    gsap.to(overlay, {
+        y: '100%',
+        opacity: 1,
+        duration: .85,
+        ease: 'power3.out',
+        onComplete: () => {
+            overlay.remove();
+            isAnimating.value = false;
+            sessionStorage.removeItem('fromProject');
+        },
+    });
+}
+
+onMounted(() => {
+    if (sessionStorage.getItem('fromProject') === 'true') {
+        animateOverlayFromProject();
+    }
+});
 
 </script>
 
@@ -56,5 +102,5 @@ function openProject(url) {
         @open="openProject"
         id="projects"
     />
-    <Footer id="contact"/>
+    <Footer id="contact" />
 </template>

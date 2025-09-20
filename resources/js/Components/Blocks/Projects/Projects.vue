@@ -48,7 +48,6 @@ const scrollImage = (index) => {
         ease: 'power3.out'
     })
 }
-
 onBeforeMount(() => {
     hideBox();
 })
