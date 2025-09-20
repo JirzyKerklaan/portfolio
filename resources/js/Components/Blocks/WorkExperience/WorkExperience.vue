@@ -4,17 +4,15 @@ import Work from './Work.vue';
 let jobs = [
     {
         'company': 'Goedemiddag!',
-        'company_desc': 'Bouwt apps voor diverse klanten',
         'time': 'AUG 2025 - HEDEN',
         'function': 'Full-stack developer',
         'location': 'Delft',
         'website_link': 'https://goedemiddag.nl/',
         'website_label': 'goedemiddag.nl',
-        'description': '<p>Als full-stack developer bij Goedemiddag! heb ik gewerkt aan complexe, schaalbare en gebruiksvriendelijke webapplicaties.</p>'
+        'description': '<p>Bij Goedemiddag! ben ik in dienst als Full-stack developer. Hier werk ik aan complexe en schaalbare webapplicaties.</p>'
     },
     {
         'company': 'Esens',
-        'company_desc': 'Creatief bureau met 23 jaar ervaring',
         'time': 'SEP 2024 - JUL 2025',
         'function': 'Full-stack developer',
         'location': 'Rotterdam',
@@ -24,7 +22,6 @@ let jobs = [
     },
     {
         'company': 'Designated',
-        'company_desc': 'Startup digitaal marketingbureau',
         'time': 'SEP 2023 - APR 2024',
         'function': 'Front-end developer',
         'location': 'Zoetermeer',
