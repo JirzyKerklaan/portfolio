@@ -15,6 +15,7 @@ import WorkExperience from '@/Components/Blocks/WorkExperience/WorkExperience.vu
 
 defineProps({
     projects: Array,
+    workExperiences: Array,
 });
 
 gsap.registerPlugin(ScrollToPlugin);
@@ -96,7 +97,10 @@ onMounted(() => {
     <Quote id="about" />
     <Skills />
     <FourCols />
-    <WorkExperience id="workexperience" />
+    <WorkExperience
+        :work-experiences="workExperiences"
+        id="workexperience"
+    />
     <Projects
         :projects="projects"
         @open="openProject"

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
+use App\Models\WorkExperience;
 use Inertia\Inertia;
 
 class HomeController extends Controller
@@ -12,7 +13,8 @@ class HomeController extends Controller
         return Inertia::render('Home', [
             'projects' => Project::query()
                 ->select('id', 'name', 'task', 'url', 'cover_url')
-                ->get()
+                ->get(),
+            'workExperiences' => WorkExperience::get(),
         ]);
     }
 }
