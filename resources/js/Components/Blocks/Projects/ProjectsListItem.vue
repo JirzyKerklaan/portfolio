@@ -1,20 +1,28 @@
 <script setup>
-defineProps({
+import { defineEmits } from 'vue';
+
+const props = defineProps({
     name: String,
     task: String,
     i: Number,
     url: String
 });
+
+const emit = defineEmits(['open']);
+
+function handleClick() {
+    emit('open', props.url);
+}
 </script>
 
 <template>
-    <div class="projects--project__inner">
+    <span @click="handleClick" class="projects--project__inner">
         <div class="projects--project__name">
             <h3><span>0{{ i + 1 }}</span>{{ name }}</h3>
         </div>
         <div class="projects--project__task">
             <span>{{task}}</span>
         </div>
-    </div>
+    </span>
     <div class="underline"></div>
 </template>

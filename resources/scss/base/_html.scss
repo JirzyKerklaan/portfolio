@@ -21,6 +21,7 @@ html {
 
     @media screen and (max-width: 760px) {
         width: 100%;
+        padding: 0 20px;
     }
 
     &-xl {
@@ -31,6 +32,7 @@ html {
 
         @media screen and (max-width: 512px) {
             width: 100%;
+            padding: 0 20px;
         }
     }
 }

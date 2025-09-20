@@ -1,0 +1,17 @@
+.projects-swipe-overlay {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background-color: #0d0d0d;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+    transition: height 0.5s ease, border-radius 0.5s ease;
+}
+
+.projects-swipe-overlay--active {
+    height: 100%;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}

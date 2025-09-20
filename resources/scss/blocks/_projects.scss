@@ -74,6 +74,8 @@
             align-items: center;
             justify-content: space-between;
             transition: ease-in-out .15s all;
+            text-decoration: none;
+            cursor: none;
 
             ~.underline {
                 display: block;
@@ -104,6 +106,7 @@
                 align-items: flex-start;
                 justify-content: flex-start;
                 transition: ease-in-out .15s all;
+                color: #0d0d0d;
 
 
                 @media screen and (max-width: 512px) {
@@ -167,19 +170,14 @@
         top: 0;
         left: 0;
         width: 100%;
-        z-index: 250;
         padding-bottom: 125px;
         box-sizing: border-box;
         transition: all .25s ease-in-out;
         overflow-y: auto;
-        transform: translateY(105%);
+        z-index: 9999;
 
         @media screen and (max-width: 760px) {
             padding-bottom: 3.25rem;
-        }
-
-        &.project-active {
-            transform: translateY(0%);
         }
 
         &.curved {
