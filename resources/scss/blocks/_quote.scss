@@ -4,6 +4,7 @@
 
     @media screen and (max-width: 512px) {
         padding-top: calc(50rem / 16);
+        min-height: unset;
     }
 
     .container {

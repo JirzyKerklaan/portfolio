@@ -48,8 +48,13 @@
             flex-direction: column;
             gap: 35px;
 
+            @media screen and (max-width: 512px) {
+                width: 100% !important;
+            }
+
             &:first-child {
-                max-width: 335px;
+                max-width: 200px;
+                width: 100%;
             }
 
             &:nth-child(2) {
@@ -62,6 +67,7 @@
 
                 @media screen and (max-width: 512px) {
                     padding-left: 0;
+                    display: none;
                 }
             }
 
@@ -73,7 +79,7 @@
                 font-weight: 400;
 
                 @media screen and (max-width: 512px) {
-                    font-size: 16px;
+                    font-size: 20px;
                 }
             }
         }
@@ -86,7 +92,7 @@
 
             @media screen and (max-width: 512px) {
                 padding-bottom: 0;
-                margin-bottom: -1.25rem;
+                margin-bottom: .25rem;
             }
         }
 
@@ -131,7 +137,7 @@
         }
 
         &__description > p {
-            font-size: 16px;
+            font-size: 20px;
             letter-spacing: -2.5%;
             line-height: 1.25;
         }
