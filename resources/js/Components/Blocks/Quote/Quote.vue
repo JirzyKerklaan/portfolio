@@ -15,13 +15,13 @@ onMounted(async () => {
 
     gsap.from(split.chars, {
         opacity: 0.25,
-        stagger: 0.03,
+        stagger: .5,
         duration: 0.6,
         ease: 'power2.out',
         scrollTrigger: {
             trigger: quoteRef.value,
             start: 'top 80%',
-            end: 'bottom 60%',
+            end: 'bottom 45%',
             scrub: 1,
         },
     })

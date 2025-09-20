@@ -39,7 +39,7 @@ function openProject(url) {
                 isAnimating.value = false;
             }
         });
-    }, 500);
+    }, 350);
 }
 
 </script>
