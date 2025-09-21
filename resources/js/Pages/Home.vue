@@ -72,13 +72,16 @@ function animateOverlayFromProject() {
 
     gsap.to(overlay, {
         y: '100%',
-        opacity: 1,
+        opacity: 1.5,
         duration: .85,
-        ease: 'power3.out',
+        ease: 'none',
+        borderTopLeftRadius: '999rem',
+        borderTopRightRadius: '999rem',
         onComplete: () => {
             overlay.remove();
             isAnimating.value = false;
             sessionStorage.removeItem('fromProject');
+            overlay.classList.remove('projects-swipe-overlay--active');
         },
     });
 }
