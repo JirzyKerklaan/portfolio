@@ -1,13 +1,10 @@
 <script setup>
-import gsap from "gsap";
-import {computed, onMounted, ref} from 'vue';
-import {router} from "@inertiajs/vue3";
+import {computed, ref} from 'vue';
+import {Link} from "@inertiajs/vue3";
 
 const props = defineProps({
     project: Object
 });
-
-const projectsViewRef = ref(null);
 
 const scrollPosition = ref(0);
 const maxScrollHeight = 500;
@@ -29,39 +26,6 @@ const groupedTechnologies = computed(() => {
         acc[tech.category].push(tech.technology);
         return acc;
     }, {});
-});
-
-const closeProject = () => {
-    if (projectsViewRef.value) {
-        gsap.to(projectsViewRef.value, {
-            opacity: 0,
-            y: 50,
-            duration: .65,
-            ease: "power3.out",
-            onComplete: redirectToHome
-        });
-    }
-};
-
-const redirectToHome = () => {
-    sessionStorage.setItem('fromProject', 'true');
-
-    router.visit('/', {
-        preserveState: false,
-        replace: false,
-        data: {},
-    });
-};
-
-onMounted(() => {
-    if (projectsViewRef.value) {
-        gsap.from(projectsViewRef.value, {
-            opacity: 0,
-            y: 50,
-            duration: 1,
-            ease: "power3.out"
-        });
-    }
 });
 </script>
 
@@ -105,48 +69,10 @@ onMounted(() => {
             </div>
 
             <div class="projects-view__close">
-                <span @click="closeProject()" :style="{ '--hover-color': project.color }">Andere projecten bekijken</span>
+                <Link as="span" href="/" :preserve-scroll="true" :style="{ '--hover-color': project.color }">
+                    Andere projecten bekijken
+                </Link>
             </div>
         </div>
     </div>
 </template>
-
-<style scoped>
-.projects-view {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #0d0d0d;
-    overflow-y: auto;
-    box-shadow: 0 -10px 30px rgba(0,0,0,0.1);
-    transform: translateY(0); /* start fully visible */
-}
-
-/* ENTER: Home -> Project */
-.swipe-up-enter-from {
-    transform: translateY(100%);
-    border-top-left-radius: 100%;
-    border-top-right-radius: 100%;
-}
-.swipe-up-enter-to {
-    transform: translateY(0);
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-}
-.swipe-up-enter-active {
-    transition: transform 0.5s ease, border-radius 0.5s ease;
-}
-
-/* LEAVE: Project -> Home */
-.swipe-up-leave-from {
-    transform: translateY(0);
-}
-.swipe-up-leave-to {
-    transform: translateY(100%);
-}
-.swipe-up-leave-active {
-    transition: transform 0.5s ease, border-radius 0.5s ease;
-}
-</style>

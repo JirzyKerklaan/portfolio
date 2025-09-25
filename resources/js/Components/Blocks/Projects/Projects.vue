@@ -2,6 +2,7 @@
 import {ref, onMounted, onBeforeMount} from 'vue'
 import ProjectsListItem from "@/Components/Blocks/Projects/ProjectsListItem.vue";
 import gsap from 'gsap'
+import {Link} from "@inertiajs/vue3";
 
 const fadingOut = ref(false)
 const followBox = ref(null)
@@ -48,6 +49,7 @@ const scrollImage = (index) => {
         ease: 'power3.out'
     })
 }
+
 onBeforeMount(() => {
     hideBox();
 })
@@ -97,7 +99,6 @@ onMounted(() => {
                             :task="project.task"
                             :i="i"
                             :url="project.url"
-                            @open="$emit('open', $event)"
                         />
                     </li>
                 </ul>
