@@ -8,6 +8,10 @@ import Projects from '@/Components/Blocks/Projects/Projects.vue';
 import FourCols from '@/Components/Blocks/FourCols/FourCols.vue';
 import WorkExperience from '@/Components/Blocks/WorkExperience/WorkExperience.vue';
 
+defineExpose({
+    transition: 'fade',
+});
+
 defineProps({
     projects: Array,
     workExperiences: Array,
@@ -15,18 +19,20 @@ defineProps({
 </script>
 
 <template>
-    <Header />
-    <PageHeader />
-    <Quote id="about" />
-    <Skills />
-    <FourCols />
-    <WorkExperience
-        :work-experiences="workExperiences"
-        id="workexperience"
-    />
-    <Projects
-        :projects="projects"
-        id="projects"
-    />
-    <Footer id="contact" />
+    <main>
+        <Header />
+        <PageHeader />
+        <Quote id="about" />
+        <Skills />
+        <FourCols />
+        <WorkExperience
+            :work-experiences="workExperiences"
+            id="workexperience"
+        />
+        <Projects
+            :projects="projects"
+            id="projects"
+        />
+        <Footer id="contact" />
+    </main>
 </template>
