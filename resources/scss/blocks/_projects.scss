@@ -39,6 +39,7 @@
             aspect-ratio: 16/9;
             z-index: 1000;
             transition: opacity 0.15s;
+            box-shadow: 0 .25rem .5rem 0 rgba(0,0,0,0.15);
 
             @media screen and (max-width: 512px) {
                 display: none;
