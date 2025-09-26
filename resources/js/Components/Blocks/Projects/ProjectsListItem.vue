@@ -9,7 +9,7 @@ const props = defineProps({
 const emit = defineEmits(['open']);
 
 function handleClick() {
-    emit('open', props.url);
+    emit('open', '/projecten/'+props.url);
 }
 </script>
 
