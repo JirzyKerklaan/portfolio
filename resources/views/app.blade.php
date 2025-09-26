@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Ontdek het creatieve werk van Jirzy Kerklaan, met een diverse selectie van designprojecten, kunst en innovatieve concepten. Laat je inspireren door de unieke benadering van elk project.">
+        <meta name="description" content="Ontdek het portfolio van Jirzy Kerklaan, van een zelfgemaakt CMS tot een creatieve website voor een grote organisatie, van alle markten thuis.">
 
         <title inertia>Portfolio | Jirzy Kerklaan</title>
 
@@ -11,7 +11,7 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
         <script src="https://kit.fontawesome.com/43df3a711f.js" crossorigin="anonymous"></script>
-        
+
         <!-- Scripts -->
         @routes
         @vite(['resources/js/app.js', "resources/js/Pages/{$page['component']}.vue"])

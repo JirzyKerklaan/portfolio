@@ -1,5 +1,5 @@
 <script setup>
-import Image from '@/Components/base/Image.vue';
+import Image from '@/Components/Base/Image.vue';
 
     let skills = [
         {

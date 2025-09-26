@@ -11,6 +11,7 @@ class HomeController extends Controller
     public function index()
     {
         return Inertia::render('Home', [
+            'transition' => 'fade',
             'projects' => Project::query()
                 ->select('id', 'name', 'task', 'url', 'cover_url')
                 ->get(),

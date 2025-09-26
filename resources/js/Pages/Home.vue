@@ -1,16 +1,14 @@
 <script setup>
-import Header from '@/Components/base/Header.vue';
-import Footer from '@/Components/base/Footer.vue';
+import Layout from "@/Pages/Layouts/Layout.vue";
+
+import Header from '@/Components/Base/Header.vue';
+import Footer from '@/Components/Base/Footer.vue';
 import PageHeader from '@/Components/Blocks/PageHeader/PageHeader.vue';
 import Quote from '@/Components/Blocks/Quote/Quote.vue';
 import Skills from '@/Components/Blocks/Skills/Skills.vue';
 import Projects from '@/Components/Blocks/Projects/Projects.vue';
 import FourCols from '@/Components/Blocks/FourCols/FourCols.vue';
 import WorkExperience from '@/Components/Blocks/WorkExperience/WorkExperience.vue';
-
-defineExpose({
-    transition: 'fade',
-});
 
 defineProps({
     projects: Array,
@@ -19,7 +17,7 @@ defineProps({
 </script>
 
 <template>
-    <main>
+    <Layout>
         <Header />
         <PageHeader />
         <Quote id="about" />
@@ -34,5 +32,5 @@ defineProps({
             id="projects"
         />
         <Footer id="contact" />
-    </main>
+    </Layout>
 </template>
