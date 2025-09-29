@@ -21,7 +21,7 @@ onMounted(async () => {
         scrollTrigger: {
             trigger: quoteRef.value,
             start: 'top 80%',
-            end: 'bottom 45%',
+            end: 'bottom 25%',
             scrub: 1,
         },
     })

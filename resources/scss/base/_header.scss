@@ -14,6 +14,11 @@
     color: white;
     mix-blend-mode: difference;
 
+    @media screen and (max-width: 512px) {
+        margin-top: 25px;
+        margin-right: 25px;
+    }
+
     &__button {
         display: flex;
         flex-direction: row;
@@ -38,6 +43,11 @@
         gap: 8px;
         transition: all 0.3s ease-in-out;
 
+        @media screen and (max-width: 512px) {
+            width: 25px;
+            gap: 5px;
+        }
+
         div {
             width: 65%;
             height: 0.25rem;
@@ -45,19 +55,35 @@
             background: currentColor;
             transition: all 0.3s cubic-bezier(0.1, 0.69, 0.41, 0.9);
 
+            @media screen and (max-width: 512px) {
+                height: 2px;
+            }
+
             &:first-child {
                 width: 100%;
                 margin-bottom: -.25rem;
+
+                @media screen and (max-width: 512px) {
+                    margin-bottom: -2px;
+                }
             }
 
             &:last-child {
                 width: 45%;
                 margin-top: -.25rem;
+
+                @media screen and (max-width: 512px) {
+                    margin-top: -2px;
+                }
             }
         }
 
         &.open {
             gap: 0;
+
+            div {
+                background-color: #F0F0F0 !important;
+            }
         }
     }
 
@@ -141,7 +167,7 @@
             opacity: 50%;
 
             @media screen and (max-width: 760px) {
-                font-size: 16px;
+                font-size: 14px;
             }
         }
 
@@ -186,7 +212,7 @@
         cursor: pointer;
 
         @media screen and (max-width: 760px) {
-            font-size: 18px;
+            font-size: 22px !important;
         }
 
         &:hover {

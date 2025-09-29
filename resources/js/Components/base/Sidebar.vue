@@ -8,13 +8,7 @@ defineEmits(["toggle"]);
 </script>
 
 <template>
-    <div
-        class="menu__overlay"
-        @click="$emit('toggle')"
-        style="opacity: 0;"
-    ></div>
-
-    <div class="menu__sidebar" style="transform: translateX(100%);">
+    <div class="menu__sidebar" style="transform: translateX(100%);" :class="isMenuVisible ? 'open' : ''">
         <div class="menu__container">
             <div></div>
             <div class="menu__inner">
