@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import {onMounted, ref} from "vue";
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { router } from "@inertiajs/vue3";
@@ -23,6 +23,74 @@ gsap.registerPlugin(ScrollToPlugin);
 
 const isMenuVisible = ref(false);
 const isMenuOpen = ref(false);
+
+const isAnimating = ref(false);
+const targetUrl = ref('');
+
+function openProject(url) {
+    if (isAnimating.value) return;
+
+
+    targetUrl.value = url;
+    isAnimating.value = true;
+
+    sessionStorage.setItem('fromProject', 'true');
+
+    const overlay = document.createElement('div');
+    overlay.className = 'projects-swipe-overlay';
+
+    gsap.set(overlay, { y: 0, opacity: 1 });
+
+    document.body.appendChild(overlay);
+
+    void overlay.offsetWidth;
+    overlay.classList.add('projects-swipe-overlay--active');
+
+    setTimeout(() => {
+        router.visit(targetUrl.value, {
+            onFinish: () => {
+                overlay.remove();
+                isAnimating.value = false;
+
+            },
+        });
+    }, 350);
+}
+
+function animateOverlayFromProject() {
+    gsap.to(window, {
+        duration: 0.15,
+        scrollTo: '#projects',
+        ease: "ease"
+    });
+
+    if (isAnimating.value) return;
+    isAnimating.value = true;
+
+    const overlay = document.createElement('div');
+    overlay.className = 'projects-swipe-overlay';
+    overlay.classList.add('projects-swipe-overlay--active');
+
+    gsap.to(overlay, { y: 0, opacity: 1, duration: 0.01});
+    document.body.appendChild(overlay);
+
+    void overlay.offsetWidth;
+
+    gsap.to(overlay, {
+        y: '100%',
+        opacity: 1.5,
+        duration: .85,
+        ease: 'none',
+        borderTopLeftRadius: '999rem',
+        borderTopRightRadius: '999rem',
+        onComplete: () => {
+            overlay.remove();
+            isAnimating.value = false;
+            sessionStorage.removeItem('fromProject');
+            overlay.classList.remove('projects-swipe-overlay--active');
+        },
+    });
+}
 
 const toggleMenu = () => {
     isMenuVisible.value = true;
@@ -53,6 +121,13 @@ const toggleMenu = () => {
         });
     }
 };
+
+
+onMounted(() => {
+    if (sessionStorage.getItem('fromProject') === 'true') {
+        animateOverlayFromProject();
+    }
+});
 </script>
 
 <template>
