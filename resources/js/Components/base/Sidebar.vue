@@ -4,18 +4,17 @@ defineProps({
     isMenuOpen: Boolean
 });
 
-const emit = defineEmits(["toggle"]);
+defineEmits(["toggle"]);
 </script>
 
 <template>
     <div
         class="menu__overlay"
-        v-show="isMenuVisible"
         @click="$emit('toggle')"
         style="opacity: 0;"
     ></div>
 
-    <div class="menu__sidebar" v-show="isMenuVisible" style="transform: translateX(100%);">
+    <div class="menu__sidebar" style="transform: translateX(100%);">
         <div class="menu__container">
             <div></div>
             <div class="menu__inner">

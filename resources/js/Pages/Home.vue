@@ -95,6 +95,7 @@ function animateOverlayFromProject() {
 const toggleMenu = () => {
     isMenuVisible.value = true;
     isMenuOpen.value = !isMenuOpen.value;
+    document.querySelector('.menu__icon').classList.toggle('open');
 
     if (isMenuOpen.value) {
         gsap.to(".menu__sidebar", { x: 0, duration: 0.3, ease: "power3.out" });

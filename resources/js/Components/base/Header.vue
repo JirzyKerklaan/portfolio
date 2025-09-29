@@ -19,8 +19,9 @@ window.scrollToElement = (element) => {
     <header class="menu">
         <div class="menu__button" @click="emit('toggleMenu')">
             <div class="menu__icon">
-                <span></span>
-                <span></span>
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
         </div>
     </header>
