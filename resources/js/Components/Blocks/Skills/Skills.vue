@@ -9,10 +9,10 @@ gsap.registerPlugin(ScrollTrigger);
 let skills = [
     { 'alt': 'Laravel PHP', 'image': 'Laravel.png' },
     { 'alt': 'Vue JS', 'image': 'Vue.png' },
-    { 'alt': 'Strapi CMS', 'image': 'Strapi.png' },
     { 'alt': 'Tailwind CSS', 'image': 'Tailwind.png' },
-    { 'alt': 'SCSS CSS', 'image': 'SCSS.png' },
     { 'alt': 'Github PMS', 'image': 'Github.png' },
+    { 'alt': 'SCSS CSS', 'image': 'SCSS.png' },
+    { 'alt': 'Strapi CMS', 'image': 'Strapi.png' },
     { 'alt': 'Statamic CMS', 'image': 'Statamic.png' },
     { 'alt': 'React JS', 'image': 'React.png' }
 ];
@@ -24,8 +24,8 @@ onMounted(() => {
     const totalWidth = container.scrollWidth - container.clientWidth;
 
     gsap.to(container, {
-        x: -totalWidth,
-        ease: 'ease',
+        x: -totalWidth - 110,
+        ease: 'power1.inOut',
         scrollTrigger: {
             trigger: container,
             start: 'top 70%',

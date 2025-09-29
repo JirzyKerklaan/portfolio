@@ -185,7 +185,7 @@
         z-index: 100;
         width: 30%;
         height: 100vh;
-        background-color: #FAFAFA;
+        background-color: #0D0D0D;
         right: 0;
         position: fixed;
 
@@ -213,7 +213,7 @@
         span {
             font-size: 1.375rem;
             margin-bottom: 10px;
-            color: #0d0d0d;
+            color: #FAFAFA;
             opacity: 50%;
 
             @media screen and (max-width: 760px) {
@@ -223,7 +223,7 @@
 
         a {
             text-decoration: none;
-            color: #0d0d0d;
+            color: #FAFAFA;
             font-size: 1.65rem;
             transition: all ease-in-out 150ms;
 
@@ -231,7 +231,7 @@
                 font-size: 18px;
             }
             &:hover {
-                color: #0d0d0d75;
+                color: #FAFAFA75;
             }
         }
     }
@@ -244,7 +244,7 @@
         span {
             font-size: 1.375rem;
             margin-bottom: 5px;
-            color: #0d0d0d;
+            color: #FAFAFA;
             opacity: 50%;
 
             @media screen and (max-width: 760px) {
@@ -255,7 +255,7 @@
 
     &__link {
         text-decoration: none;
-        color: #0d0d0d !important;
+        color: #FAFAFA !important;
         opacity: 100% !important;
         font-size: 2rem !important;
         transition: all ease-in-out 150ms;
@@ -266,7 +266,7 @@
         }
 
         &:hover {
-            color: #0d0d0d75 !important;
+            color: #FAFAFA75 !important;
         }
     }
 
