@@ -1,5 +1,5 @@
 .quote {
-    padding-top: calc(165rem / 16);
+    padding-top: calc(75rem / 16);
     min-height: 270px;
 
     @media screen and (max-width: 512px) {
@@ -21,7 +21,7 @@
             width: 100%;
 
             @media screen and (max-width: 512px) {
-                font-size: calc(22rem / 16);
+                font-size: calc(24rem / 16);
             }
 
             span {

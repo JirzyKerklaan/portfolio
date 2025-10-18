@@ -112,17 +112,18 @@
                 text-decoration: none;
                 padding-bottom: 5px;
                 border-bottom: #0d0d0d 2.5px solid;
-                transition: all .15s ease;
+                transition: all .3s ease;
                 cursor: pointer;
+                padding-right: 2rem;
 
                 &::after {
                     content: '\f061';
                     font-family: "FontAwesome";
-                    display: inline-block;
+                    position: absolute;
                     transform: rotate(-45deg);
                     aspect-ratio: 1/1;
                     margin-left: .5rem;
-                    transition: all .1s ease;
+                    transition: all .3s ease;
                 }
 
                 &:hover {
@@ -131,6 +132,8 @@
 
                     &::after {
                         color: #1BDDB1;
+                        margin-left: .8rem;
+                        margin-top: -.2rem;
                     }
                 }
             }

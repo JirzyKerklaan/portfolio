@@ -6,7 +6,7 @@ use App\Models\Project;
 use App\Models\WorkExperience;
 use Inertia\Inertia;
 
-class HomeController extends Controller
+class SiteController extends Controller
 {
     public function index()
     {

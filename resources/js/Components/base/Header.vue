@@ -18,7 +18,7 @@ window.scrollToElement = (element) => {
 };
 
 const handleScroll = () => {
-    const isScrolled = window.scrollY > window.innerHeight;
+    const isScrolled = window.scrollY > window.innerHeight - 80;
 
     gsap.to(".menu__icon div", {
         color: isScrolled ? "#0d0d0d" : "#ffffff",

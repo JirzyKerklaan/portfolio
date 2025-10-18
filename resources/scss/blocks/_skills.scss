@@ -5,15 +5,33 @@
         padding-top: calc(75rem/16);
     }
 
-    &__inner {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        row-gap: calc(30rem / 16);
+    .container {
+        max-width: 1200px;
     }
 
-    &__image {
-        width: fit-content;
-        height: fit-content;
+    &__inner {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        row-gap: calc(30rem / 16);
+
+        @media screen and (max-width: 512px) {
+            flex-direction: column;
+        }
+    }
+
+    &__title {
+        min-width: 340px;
+    }
+
+    &__box {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .btn {
+        cursor: default;
     }
 }

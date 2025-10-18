@@ -12,6 +12,11 @@ h2 {
     font-size: 2rem;
     font-weight: 400;
     line-height: 1;
+
+    @media screen and (max-width: 512px) {
+        font-size: 1.35rem;
+        max-width: none;
+    }
 }
 
 p {
@@ -21,7 +26,7 @@ p {
     opacity: 50%;
     line-height: 1.25;
     letter-spacing: -.25px;
-    
+
     @media screen and (max-width: 512px) {
         font-size: 1rem;
         opacity: 95%;

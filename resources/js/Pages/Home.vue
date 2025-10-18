@@ -13,6 +13,7 @@ import Projects from '@/Components/Blocks/Projects/Projects.vue';
 import FourCols from '@/Components/Blocks/FourCols/FourCols.vue';
 import WorkExperience from '@/Components/Blocks/WorkExperience/WorkExperience.vue';
 import Sidebar from "@/Components/base/Sidebar.vue";
+import About from "@/Components/Blocks/About/About.vue";
 
 defineProps({
     projects: Array,
@@ -137,7 +138,7 @@ onMounted(() => {
         <Header @toggleMenu="toggleMenu" />
         <PageHeader />
         <Quote id="about" />
-        <FourCols />
+        <About />
         <Skills />
         <WorkExperience :work-experiences="workExperiences" id="workexperience" />
         <Projects :projects="projects" @open="openProject" id="projects" />
