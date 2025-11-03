@@ -10,7 +10,7 @@
                         <h3>Wat doe ik?</h3>
                     </div>
                     <div class="column__content">
-                        <p>Ik ben een full-stack software developer met ruim een jaar ervaring.</p>
+                        <p>Ik ben een full-stack software developer met ruim twee jaar ervaring.</p>
                     </div>
                 </div>
 

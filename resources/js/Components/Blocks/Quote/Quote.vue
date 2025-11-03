@@ -34,7 +34,7 @@ onMounted(async () => {
             <div class="quote__inner">
                 <q ref="quoteRef">
                     Hey! Ik ben Jirzy, een gepassioneerde full-stack developer.
-                    Met ruim een jaar ervaring heb ik voor diverse klanten en bedrijven
+                    Met ruim twee jaar ervaring heb ik voor diverse klanten en bedrijven
                     op maat gemaakte websites ontwikkeld.
                 </q>
             </div>
